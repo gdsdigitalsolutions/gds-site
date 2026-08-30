@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wala ang page na ito — GDS Digital Solutions</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#00102c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<!-- Naka-inline ang estilo dito dahil pwedeng maipakita ang page na ito
+     mula sa kahit anong lalim ng URL, kung saan hindi tama ang relative paths. -->
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh;
+    display: grid; place-items: center; padding: 32px;
+    background: #00102c; color: #eaf2ff;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.65; text-align: center;
+  }
+  .box { max-width: 520px; }
+  .code {
+    font-family: "Archivo", sans-serif; font-weight: 800; font-size: 88px; line-height: 1;
+    letter-spacing: -.04em; margin-bottom: 8px;
+    background: linear-gradient(96deg, #008afc, #03c6fa);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  h1 { font-family: "Archivo", sans-serif; font-size: 26px; letter-spacing: -.02em; margin: 0 0 12px; }
+  p { color: #b8cdec; margin: 0 0 28px; }
+  .row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  a.btn {
+    display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px;
+    padding: 13px 24px; border-radius: 10px; border: 1px solid transparent;
+  }
+  .primary { background: #0065eb; color: #fff; }
+  .primary:hover { background: #0043b9; }
+  .ghost { border-color: rgba(255,255,255,.28); color: #fff; }
+  .ghost:hover { background: rgba(255,255,255,.1); }
+  .rule { height: 3px; width: 56px; margin: 0 auto 24px; background: linear-gradient(90deg,#0065eb,#03c6fa); }
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="code">404</div>
+    <div class="rule"></div>
+    <h1>Wala ang page na hinahanap mo</h1>
+    <p>
+      Baka nabago ang link, o nagkamali lang ng pagka-type. Ang mga product namin ay nasa
+      catalog — nandoon lahat.
+    </p>
+    <div class="row">
+      <a class="btn primary" id="products-link" href="/products/">Tingnan ang mga product</a>
+      <a class="btn ghost" id="home-link" href="/">Bumalik sa home</a>
+    </div>
+  </div>
+
+<script>
+  // Sa GitHub Pages project site, ang site ay nasa /<repo>/ — kaya kailangang
+  // isama ang unang bahagi ng path para tama ang mga link.
+  (function () {
+    var parts = location.pathname.split("/").filter(Boolean);
+    var base = "/";
+    if (parts.length && location.hostname.indexOf("github.io") > -1) base = "/" + parts[0] + "/";
+    document.getElementById("home-link").href = base;
+    document.getElementById("products-link").href = base + "products/";
+  })();
+</script>
+</body>
+</html>

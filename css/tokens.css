@@ -1,0 +1,109 @@
+/* GDS Digital Solutions — design tokens
+   Colors sampled directly from the official logo and cover art. */
+
+:root {
+  /* Brand — sampled from gds-logo.png */
+  --navy-950: #00091f;
+  --navy-900: #00102c;
+  --navy-800: #041a3e;
+  --navy-700: #0a2751;
+  --blue-800: #0035a0;
+  --blue-700: #0043b9;
+  --blue-600: #0065eb;
+  --blue-500: #008afc;
+  --cyan-400: #03c6fa;
+  --cyan-300: #6fdcff;
+
+  /* Neutrals */
+  --white: #ffffff;
+  --gray-50: #f6f8fc;
+  --gray-100: #eef2f8;
+  --gray-200: #dde4ef;
+  --gray-300: #c3cede;
+  --gray-500: #6a7b96;
+  --gray-600: #51617b;
+  --gray-700: #35455e;
+  --gray-900: #0b1b36;
+
+  /* Status */
+  --green-600: #0f8a4d;
+  --green-50: #e7f6ee;
+  --amber-600: #b06a00;
+  --amber-50: #fdf3e2;
+  --red-600: #c3352b;
+  --red-50: #fdeceb;
+
+  /* Semantic — light (default) */
+  --bg: var(--white);
+  --bg-alt: var(--gray-50);
+  --surface: var(--white);
+  --surface-2: var(--gray-100);
+  --border: var(--gray-200);
+  --border-strong: var(--gray-300);
+  --text: var(--gray-900);
+  --text-muted: var(--gray-600);
+  --text-faint: var(--gray-500);
+  --link: var(--blue-700);
+  --accent: var(--blue-600);
+  --accent-hover: var(--blue-700);
+  --on-accent: #ffffff;
+  --ring: rgba(0, 101, 235, 0.35);
+
+  /* Dark band (used in both themes for hero/footer) */
+  --band-bg: var(--navy-900);
+  --band-text: #eaf2ff;
+  --band-muted: #9fb4d6;
+  --band-border: rgba(111, 220, 255, 0.16);
+
+  /* Type */
+  --font-head: "Archivo", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  /* Space — 4px base */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --s-9: 88px; --s-10: 120px;
+
+  /* Radius + elevation */
+  --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-xl: 20px;
+  --shadow-sm: 0 1px 2px rgba(11, 27, 54, .06), 0 1px 3px rgba(11, 27, 54, .04);
+  --shadow-md: 0 4px 12px rgba(11, 27, 54, .07), 0 2px 4px rgba(11, 27, 54, .04);
+  --shadow-lg: 0 18px 40px rgba(0, 16, 44, .12), 0 4px 12px rgba(0, 16, 44, .06);
+
+  --wrap: 1140px;
+  --wrap-narrow: 760px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: var(--navy-950);
+    --bg-alt: #010b22;
+    --surface: #041329;
+    --surface-2: #071c39;
+    --border: #123055;
+    --border-strong: #1c4577;
+    --text: #e9f1fb;
+    --text-muted: #9db2d1;
+    --text-faint: #7c93b5;
+    --link: var(--cyan-300);
+    --accent: var(--blue-500);
+    --accent-hover: var(--cyan-400);
+    --on-accent: #001126;
+    --ring: rgba(3, 198, 250, .4);
+
+    --band-bg: #010b22;
+    --band-border: rgba(111, 220, 255, .12);
+
+    --green-50: rgba(15, 138, 77, .16);
+    --green-600: #4ad48d;
+    --amber-50: rgba(176, 106, 0, .18);
+    --amber-600: #f0b35a;
+    --red-50: rgba(195, 53, 43, .18);
+    --red-600: #ff8b82;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+    --shadow-md: 0 4px 14px rgba(0, 0, 0, .45);
+    --shadow-lg: 0 20px 44px rgba(0, 0, 0, .55);
+  }
+}

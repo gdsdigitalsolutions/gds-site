@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tl" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Umorder — GDS Digital Solutions</title>
+<meta name="description" content="Punan ang order form, kunin ang order reference mo, magbayad via GCash o bank transfer, at i-upload ang proof of payment.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="./">
+
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/brand/favicon-16.png">
+<link rel="apple-touch-icon" href="../assets/brand/apple-touch-icon.png">
+<meta name="theme-color" content="#00102c">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Lumaktaw sa nilalaman</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="../">
+      <img src="../assets/brand/logo-96.png" alt="" width="96" height="96">
+      <span>
+        <span class="brand__name">GDS Digital Solutions</span>
+        <span class="brand__tag">Digital Products</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Buksan ang menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Pangunahing menu">
+      <a href="../products/">Mga Product</a>
+      <a href="../#paano-umorder">Paano Umorder</a>
+      <a href="../track/">Track Order</a>
+      <a href="../contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li><a href="../products/">Mga Product</a></li>
+        <li aria-current="page">Umorder</li>
+      </ol>
+    </nav>
+  </div>
+
+  <section class="section--tight">
+    <div class="wrap">
+
+      <!-- Ipinapakita kapag walang naka-set na endpoint sa config.js -->
+      <div class="notice notice--warn" data-gds-unless="order.endpoint" style="margin-bottom:var(--s-5)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l9 16H3z"/><path d="M12 9v5M12 17h.01"/></svg>
+        <div>
+          <strong>Hindi pa aktibo ang online order form</strong>
+          Habang inaayos namin ito, i-message mo na lang kami sa Facebook para umorder — sagutin namin agad.
+          <span data-gds-require="contact.messenger"> <a href="#" data-gds-href="contact.messenger" rel="noopener">Buksan ang Messenger</a>.</span>
+        </div>
+      </div>
+
+      <div class="flow-nav" aria-label="Hakbang ng order">
+        <span class="flow-nav__item is-active" data-flow-nav="1"><b>1</b> Detalye ng order</span>
+        <span class="flow-nav__item" data-flow-nav="2"><b>2</b> Bayad</span>
+        <span class="flow-nav__item" data-flow-nav="3"><b>3</b> Proof of payment</span>
+      </div>
+
+      <div class="pd-grid">
+        <div>
+
+          <!-- ================= HAKBANG 1 ================= -->
+          <div class="flow-step is-active" data-flow-step="1">
+            <h1 style="font-size:clamp(1.6rem,1.2rem+1.6vw,2.2rem)">Detalye ng order</h1>
+            <p class="lead" style="margin:var(--s-3) 0 var(--s-6)">
+              Punan ito at bibigyan ka namin agad ng <strong>Order Reference</strong>.
+              Wala kaming hinihinging password, OTP, o card details — kailanman.
+            </p>
+
+            <form id="order-form" novalidate>
+              <div class="form-grid">
+
+                <div class="field">
+                  <label for="f-product">Product <span class="req" aria-hidden="true">*</span></label>
+                  <select id="f-product" name="product" required></select>
+                  <span class="field__error" data-error-for="product">Pumili ng product.</span>
+                </div>
+
+                <div class="form-grid form-grid--2">
+                  <div class="field">
+                    <label for="f-qty">Dami</label>
+                    <input type="number" id="f-qty" name="qty" value="1" min="1" max="20" inputmode="numeric">
+                  </div>
+                  <div class="field" id="field-payment-wrap">
+                    <label for="f-payment">Paraan ng bayad <span class="req" aria-hidden="true">*</span></label>
+                    <select id="f-payment" name="paymentMethod" required>
+                      <option value="">Pumili…</option>
+                      <option value="GCash">GCash</option>
+                      <option value="Bank Transfer">Bank transfer</option>
+                    </select>
+                    <span class="field__error" data-error-for="paymentMethod">Pumili ng paraan ng bayad.</span>
+                  </div>
+                </div>
+
+                <hr style="border:0;border-top:1px solid var(--border);margin-block:var(--s-2)">
+
+                <div class="field">
+                  <label for="f-name">Buong pangalan <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="f-name" name="name" autocomplete="name" required placeholder="Hal. Juan Dela Cruz">
+                  <span class="field__hint">Ilagay ang pangalang gagamitin mo sa pagbabayad kung kaya.</span>
+                  <span class="field__error" data-error-for="name">Kailangan ang pangalan mo.</span>
+                </div>
+
+                <div class="form-grid form-grid--2">
+                  <div class="field">
+                    <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+                    <input type="email" id="f-email" name="email" autocomplete="email" required placeholder="ikaw@email.com">
+                    <span class="field__hint">Dito ipapadala ang kumpirmasyon at ang file mo.</span>
+                    <span class="field__error" data-error-for="email">Ilagay ang tamang email address.</span>
+                  </div>
+                  <div class="field">
+                    <label for="f-mobile">Mobile number <span class="req" aria-hidden="true">*</span></label>
+                    <input type="tel" id="f-mobile" name="mobile" autocomplete="tel" required placeholder="09XX XXX XXXX">
+                    <span class="field__error" data-error-for="mobile">Ilagay ang mobile number mo.</span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="f-messenger">Pangalan sa Facebook o Messenger</label>
+                  <input type="text" id="f-messenger" name="messenger" placeholder="Hal. Juan Dela Cruz — o link ng profile mo">
+                  <span class="field__hint">Opsyonal, pero mas mabilis kaming makakausap dito kapag may tanong.</span>
+                </div>
+
+                <div class="field">
+                  <label for="f-notes">Detalye ng negosyo mo o tanong</label>
+                  <textarea id="f-notes" name="notes" placeholder="Hal. mga 60 kliyente sa 3 purok, notebook pa ang gamit ko ngayon, may ilang may utang na 2–3 buwan. O kahit anong gusto mong sabihin bago tayo mag-setup."></textarea>
+                </div>
+
+                <!-- honeypot: hindi ito nakikita ng tao -->
+                <div class="hp-field" aria-hidden="true">
+                  <label for="f-website">Iwanang blangko</label>
+                  <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+
+                <label style="display:flex;gap:var(--s-3);align-items:flex-start;font-size:.9375rem;cursor:pointer">
+                  <input type="checkbox" id="f-agree" name="agree" required style="width:18px;height:18px;margin-top:3px;flex:none">
+                  <span>Nabasa at sang-ayon ako sa <a href="../terms/" target="_blank" rel="noopener">Terms of Service</a> at <a href="../refund/" target="_blank" rel="noopener">Refund Policy</a>. Naiintindihan kong digital ang produkto at may kaakibat itong panganib na nakasulat sa product page.</span>
+                </label>
+                <span class="field__error" data-error-for="agree" style="display:none">Kailangan mong sang-ayon bago tumuloy.</span>
+
+                <div id="form-error" class="notice notice--error" hidden>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+                  <div><strong>May problema</strong><span id="form-error-msg"></span></div>
+                </div>
+
+                <button type="submit" class="btn btn--accent btn--lg btn--block" id="submit-order">
+                  Kunin ang Order Reference
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- ================= HAKBANG 2 ================= -->
+          <div class="flow-step" data-flow-step="2">
+            <h2>Bayaran ang order mo</h2>
+            <p class="lead" style="margin:var(--s-3) 0 var(--s-5)">
+              Naitala na namin ang order mo. Ito ang reference mo — gamitin mo ito sa pagbabayad at sa pag-track.
+            </p>
+
+            <div style="display:flex;flex-wrap:wrap;gap:var(--s-3);align-items:center;margin-bottom:var(--s-5)">
+              <span class="ref-badge" id="ref-display">GDS-0000-0000</span>
+              <button class="copy-btn" type="button" data-copy-from="#ref-display">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
+                <span class="copy-btn__label">Kopyahin ang reference</span>
+              </button>
+            </div>
+
+            <div class="notice notice--warn" style="margin-bottom:var(--s-5)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l9 16H3z"/><path d="M12 9v5M12 17h.01"/></svg>
+              <div>
+                <strong>Ilagay ang reference sa notes ng bayad</strong>
+                Kapag nasa notes o message ng bayad mo ang <span class="mono" id="ref-inline">reference</span>, agad naming makikita kung kanino ito galing. Kung nakalimutan mo, okay lang — sabihin mo na lang sa amin.
+              </div>
+            </div>
+
+            <div id="pay-panel"></div>
+
+            <div class="btn-row" style="margin-top:var(--s-6)">
+              <button type="button" class="btn btn--accent btn--lg" data-goto-step="3">
+                Nakabayad na ako — mag-upload ng resibo
+              </button>
+              <a class="btn btn--outline btn--lg" href="../track/" id="pay-later">Bayaran ko mamaya</a>
+            </div>
+
+            <p class="tiny muted" style="margin-top:var(--s-4)">
+              Naipadala na namin ang detalye ng order sa email mo, kaya hindi mawawala ang reference kahit isara mo ang page.
+            </p>
+          </div>
+
+          <!-- ================= HAKBANG 3 ================= -->
+          <div class="flow-step" data-flow-step="3">
+            <h2>I-upload ang proof of payment</h2>
+            <p class="lead" style="margin:var(--s-3) 0 var(--s-5)">
+              Screenshot ng resibo mula sa GCash o sa banking app mo. Ito ang titingnan namin bago ipadala ang file mo.
+            </p>
+
+            <div style="display:flex;flex-wrap:wrap;gap:var(--s-3);align-items:center;margin-bottom:var(--s-5)">
+              <span class="ref-badge" id="ref-display-2">GDS-0000-0000</span>
+            </div>
+
+            <form id="proof-form" novalidate>
+              <label class="file-drop" id="file-drop" for="f-proof">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></svg>
+                <strong style="display:block;font-family:var(--font-head)">Pumili ng larawan o i-drag dito</strong>
+                <span class="small muted">JPG, PNG, o PDF — hanggang <span id="max-size">5</span>MB</span>
+                <input type="file" id="f-proof" name="proof" accept="image/jpeg,image/png,image/webp,application/pdf">
+              </label>
+
+              <div class="file-preview" id="file-preview">
+                <img id="preview-img" alt="" src="" hidden>
+                <div class="file-preview__meta">
+                  <strong id="preview-name"></strong>
+                  <span class="muted small" id="preview-size"></span>
+                </div>
+                <button type="button" class="btn btn--outline btn--sm" id="clear-file" style="margin-left:auto">Alisin</button>
+              </div>
+
+              <div class="field" style="margin-top:var(--s-5)">
+                <label for="f-paid-ref">Reference number ng bayad mo</label>
+                <input type="text" id="f-paid-ref" name="paidRef" placeholder="Hal. ang 13-digit na ref no. ng GCash">
+                <span class="field__hint">Opsyonal, pero mas mabilis ang verification kapag nandito ito.</span>
+              </div>
+
+              <div id="proof-error" class="notice notice--error" hidden style="margin-top:var(--s-4)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+                <div><strong>May problema</strong><span id="proof-error-msg"></span></div>
+              </div>
+
+              <button type="submit" class="btn btn--accent btn--lg btn--block" id="submit-proof" style="margin-top:var(--s-5)">
+                Ipadala ang proof of payment
+              </button>
+            </form>
+
+            <p class="small muted center" style="margin-top:var(--s-4)">
+              Ayaw mag-upload dito? <a href="#" data-gds-href="contact.messenger" rel="noopener">Ipadala na lang sa Messenger</a>
+              kasama ang reference mo — pareho lang.
+            </p>
+
+            <p class="small center" style="margin-top:var(--s-3)">
+              <button type="button" class="btn btn--ghost btn--sm" data-goto-step="2">&larr; Balik sa payment details</button>
+            </p>
+          </div>
+
+        </div>
+
+        <!-- ================= SUMMARY ================= -->
+        <aside>
+          <div class="card summary" id="order-summary">
+            <h3 style="font-size:1.0625rem;margin-bottom:var(--s-4)">Buod ng order</h3>
+
+            <div class="summary__line">
+              <span class="muted">Product</span>
+              <strong id="sum-product" style="text-align:right;max-width:60%">—</strong>
+            </div>
+            <div class="summary__line">
+              <span class="muted">Dami</span>
+              <strong id="sum-qty">1</strong>
+            </div>
+            <div class="summary__line">
+              <span class="muted">Bayad</span>
+              <strong id="sum-method">—</strong>
+            </div>
+
+            <div class="summary__total">
+              <span>Kabuuan</span>
+              <span id="sum-total">—</span>
+            </div>
+
+            <p class="tiny muted" style="margin-top:var(--s-4)" id="sum-note">
+              Walang dagdag na bayad. Ang halagang ito lang ang ipapadala mo.
+            </p>
+
+            <hr style="border:0;border-top:1px solid var(--border);margin:var(--s-5) 0">
+
+            <ul class="buy-box__facts">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                <div><b>Walang hinihinging OTP</b><span>Ikaw mismo ang magpapadala mula sa app mo.</span></div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                <div><b data-gds-text="order.deliveryPromise">Mabilis na delivery</b><span>Pagka-verify ng bayad mo.</span></div>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="margin-top:0;border-top:0">
+      <span>&copy; <span data-year>2026</span> GDS Digital Solutions</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../terms/">Terms of Service</a>
+        <a href="../privacy/">Privacy Policy</a>
+        <a href="../refund/">Refund Policy</a>
+        <a href="../contact/">Contact</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/config.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/order.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /order/
+
+# Sitemap: idadagdag ito ng tools/build-pages.ps1 kapag napunan mo na ang
+# site.baseUrl sa js/config.js
