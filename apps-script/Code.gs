@@ -21,7 +21,7 @@ var SETTINGS = {
 
   // Live URL ng website mo, walang slash sa dulo.
   // Halimbawa: "https://gdsdigital.github.io/gds-site"
-  siteUrl: "",
+  siteUrl: "https://gdsdigitalsolutions.github.io/gds-site",
 
   // Pangalan ng sheet tab na pagsusulatan (gagawin kung wala pa)
   sheetName: "Orders",

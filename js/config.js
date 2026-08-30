@@ -72,7 +72,7 @@ window.GDS_CONFIG = {
   order: {
     // I-paste dito ang "Web app URL" mula sa Apps Script deployment.
     // Mukhang: "https://script.google.com/macros/s/AKfy..../exec"
-    endpoint: "https://script.google.com/macros/library/d/1OgPflwafCClrkKEoiheDidUiB9YnC61pScSl5ORaFjMtVG8iSWMJwKK4/1",
+    endpoint: "",
     // Pangako mo sa delivery — lalabas sa lahat ng product page
     deliveryPromise: "Ipapadala within 1–6 oras pagka-verify ng bayad",
     // Max na laki ng screenshot na tatanggapin (MB)
@@ -85,7 +85,7 @@ window.GDS_CONFIG = {
      Kapag na-deploy na sa GitHub Pages, ilagay dito ang live URL
      (walang slash sa dulo). Ginagamit ito ng social share links. */
   site: {
-    baseUrl: "",
+    baseUrl: "https://gdsdigitalsolutions.github.io/gds-site",
     // Ipakita ang presyo sa product cards? Kapag `false`, "Message for price"
     // ang lalabas kahit may nakalagay na presyo sa products.js.
     showPrices: true
