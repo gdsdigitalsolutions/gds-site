@@ -30,7 +30,7 @@ window.GDS_CONFIG = {
     // Direktang Messenger link papunta sa page
     messenger: "https://m.me/61593397667884",
     // Email na tatanggap ng orders (dito rin ipapadala ang notification)
-    email: "",
+    email: "geraldsinio@gmail.com",
     // Mobile number — HALIMBAWA: "0917 123 4567"
     mobile: "",
     // Oras ng operasyon — HALIMBAWA: "Lunes–Linggo, 8:00 AM – 10:00 PM"
