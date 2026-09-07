@@ -361,10 +361,14 @@
               Bago ka magpadala, dapat <strong data-gds-text="payment.gcash.accountName">—</strong> ang
               pangalang lalabas sa GCash app mo. Kung iba, huwag ituloy at i-message mo kami.
             </p>
+            <div data-gds-require="payment.gcash.qrImage" style="text-align:center;padding-top:var(--s-2)">
+              <img data-gds-pay-img="payment.gcash.qrImage" src="data:," alt="GCash QR code" style="max-width:200px;margin:0 auto;border-radius:var(--r-md)">
+              <div class="tiny muted" style="margin-top:var(--s-2)">O i-scan na lang gamit ang GCash app</div>
+            </div>
           </div>
         </div>
 
-        <div class="pay-card" data-gds-require="payment.bank.accountNumber">
+        <div class="pay-card" data-gds-require-any="payment.bank.accountNumber, payment.bank.qrImage">
           <div class="pay-card__head">
             <span class="pay-card__logo pay-card__logo--bank">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px" aria-hidden="true"><path d="M3 10l9-6 9 6M5 10v9M19 10v9M3 19h18M9 19v-5h6v5"/></svg>
@@ -381,7 +385,7 @@
                 <div class="field-row__value" data-gds-text="payment.bank.accountName">—</div>
               </div>
             </div>
-            <div class="field-row">
+            <div class="field-row" data-gds-require="payment.bank.accountNumber">
               <div>
                 <div class="field-row__label">Account number</div>
                 <div class="field-row__value" id="bank-num" data-gds-text="payment.bank.accountNumber">—</div>
@@ -390,6 +394,10 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
                 <span class="copy-btn__label">Kopyahin</span>
               </button>
+            </div>
+            <div data-gds-require="payment.bank.qrImage" style="text-align:center;padding-top:var(--s-2)">
+              <img data-gds-pay-img="payment.bank.qrImage" src="data:," alt="Bank QR code" style="max-width:200px;margin:0 auto;border-radius:var(--r-md)">
+              <div class="tiny muted" style="margin-top:var(--s-2)">O i-scan na lang gamit ang banking app mo</div>
             </div>
           </div>
         </div>
