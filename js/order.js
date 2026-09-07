@@ -206,9 +206,10 @@
     var bankAcct = G.get("payment.bank.accountName");
     var bankNum = G.get("payment.bank.accountNumber");
     var bankType = G.get("payment.bank.accountType");
+    var bankQR = G.get("payment.bank.qrImage");
 
     var useBank = method === "Bank Transfer";
-    var configured = useBank ? !!bankNum : !!gcashNum;
+    var configured = useBank ? (!!bankNum || !!bankQR) : !!gcashNum;
 
     if (!configured) {
       return '' +
@@ -228,9 +229,16 @@
           ? '<div class="field-row"><div><div class="field-row__label">Account name</div>' +
             '<div class="field-row__value">' + G.esc(bankAcct) + "</div></div></div>"
           : "") +
-        '<div class="field-row"><div><div class="field-row__label">Account number</div>' +
-          '<div class="field-row__value" id="pay-num">' + G.esc(bankNum) + "</div></div>" +
-          copyBtn("#pay-num") + "</div>"
+        (bankNum
+          ? '<div class="field-row"><div><div class="field-row__label">Account number</div>' +
+            '<div class="field-row__value" id="pay-num">' + G.esc(bankNum) + "</div></div>" +
+            copyBtn("#pay-num") + "</div>"
+          : "") +
+        (bankQR
+          ? '<div style="text-align:center;padding-top:var(--s-3)">' +
+            '<img src="../assets/pay/' + G.esc(bankQR) + '" alt="' + G.esc(bankName || "Bank") + ' QR code" style="max-width:220px;margin:0 auto;border-radius:var(--r-md)">' +
+            '<div class="tiny muted" style="margin-top:var(--s-2)">I-scan gamit ang banking app mo</div></div>'
+          : "")
       : '' +
         (gcashName
           ? '<div class="field-row"><div><div class="field-row__label">Account name</div>' +

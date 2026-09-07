@@ -50,17 +50,18 @@ window.GDS_CONFIG = {
       // GCash number — HALIMBAWA: "0917 123 4567"
       accountNumber: "0919 703 0111",
       // Ilagay ang QR code image sa assets/pay/ tapos isulat ang filename dito.
-      // HALIMBAWA: "gcash-qr.png"  (iwan blangko kung wala pa)
-      qrImage: ""
+      qrImage: "gcash-qr.jpg"
     },
     bank: {
       enabled: true,
-      // HALIMBAWA: "BDO Unibank" / "BPI" / "Landbank"
-      bankName: "",
-      accountName: "",
+      // HALIMBAWA: "MariBank" / "BDO Unibank" / "BPI"
+      bankName: "MariBank",
+      accountName: "GERALD SINIO",
       accountNumber: "",
       // Opsyonal — HALIMBAWA: "Savings" o branch name
-      accountType: ""
+      accountType: "",
+      // Screenshot ng bank QR mo — ilagay sa assets/pay/ tapos isulat ang filename.
+      qrImage: "maribank-qr.jpg"
     },
     // Sinusuportahang paraan bukod sa taas (para sa FAQ text lang)
     otherMethods: "Maya at InstaPay/PESONet transfer — message lang kami."

@@ -78,6 +78,21 @@
       if (!ok) el.hidden = true;
     });
 
+    // Katulad ng require, pero sapat na kung ISA man lang sa mga key ang may laman —
+    // hal. ang bank card na pwedeng QR lang muna habang wala pa ang account number
+    scope.querySelectorAll("[data-gds-require-any]").forEach(function (el) {
+      var keys = el.getAttribute("data-gds-require-any").split(",");
+      var ok = keys.some(function (k) { return !!get(k.trim()); });
+      if (!ok) el.hidden = true;
+    });
+
+    // <img data-gds-pay-img="payment.gcash.qrImage"> — kinukuha ang larawan
+    // mula sa assets/pay/ batay sa filename na nasa config
+    scope.querySelectorAll("[data-gds-pay-img]").forEach(function (el) {
+      var v = get(el.getAttribute("data-gds-pay-img"));
+      if (v) el.src = root() + "assets/pay/" + v;
+    });
+
     // Lumalabas lang kapag LAHAT ng nakalistang key ay blangko —
     // hal. ang "inaayos pa" na notice, na dapat mawala sa sandaling
     // may isa nang paraan ng bayad o contact na naka-set.
