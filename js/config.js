@@ -57,7 +57,7 @@ window.GDS_CONFIG = {
       // HALIMBAWA: "MariBank" / "BDO Unibank" / "BPI"
       bankName: "MariBank",
       accountName: "GERALD SINIO",
-      accountNumber: "",
+      accountNumber: "1847 4603 430",
       // Opsyonal — HALIMBAWA: "Savings" o branch name
       accountType: "",
       // Screenshot ng bank QR mo — ilagay sa assets/pay/ tapos isulat ang filename.
