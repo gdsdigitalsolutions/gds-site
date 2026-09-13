@@ -30,7 +30,7 @@ window.GDS_CONFIG = {
     // Direktang Messenger link papunta sa page
     messenger: "https://m.me/61593397667884",
     // Email na tatanggap ng orders (dito rin ipapadala ang notification)
-    email: "geraldsinio@gmail.com",
+    email: "gdsdigisol@gmail.com",
     // Mobile number — HALIMBAWA: "0917 123 4567"
     mobile: "",
     // Oras ng operasyon — HALIMBAWA: "Lunes–Linggo, 8:00 AM – 10:00 PM"
@@ -73,7 +73,7 @@ window.GDS_CONFIG = {
   order: {
     // I-paste dito ang "Web app URL" mula sa Apps Script deployment.
     // Mukhang: "https://script.google.com/macros/s/AKfy..../exec"
-    endpoint: "https://script.google.com/macros/s/AKfycbwGtadgDZMqpwHBADZ_HH7Bx71qxSaaYGOfURO-7i2h7iPcVQRC6UqnO76mhxK-iJwf_A/exec",
+    endpoint: "https://script.google.com/macros/s/AKfycbyhyOhnk3J0ppnW0s3DmI1Ep6SFEJV9PqxKDdQtjVp0bBQn3H6B9Rd8EMdFwMGdlC50hg/exec",
     // Pangako mo sa delivery — lalabas sa lahat ng product page
     deliveryPromise: "Ipapadala within 1–6 oras pagka-verify ng bayad",
     // Max na laki ng screenshot na tatanggapin (MB)
