@@ -31,7 +31,7 @@ window.GDS_PRODUCTS = [
     "price": 2499,
     "priceNote": "One-time lang. Walang monthly. Sa iyo ang file.",
     "image": "bayadtrack.jpg",
-    "images": ["bayadtrack.jpg", "bayadtrack-flow.jpg", "bayadtrack-steps.jpg", "bayadtrack-features.jpg"],
+    "images": ["bayadtrack.jpg", "bayadtrack-dashboard.jpg", "bayadtrack-followup.jpg", "bayadtrack-tracker.jpg", "bayadtrack-collection.jpg"],
     "summary":
       "Para sa mga nangongolekta ng buwanang bayad — internet reseller, kapitbahay-net, coop, o kahit anong negosyong may listahan ng singilin. Tina-type lang ng collector ang bayad sa phone habang nasa field; ilang segundo lang, updated na ang dashboard mo — magkano ang nakolekta ngayong araw, sino pa ang may utang, sino ang dapat i-follow up. Walang tawagan, walang \"i-send ko mamaya\". Hindi ito problema ng sipag — problema ito ng sistema, at ito ang sistemang inaayos iyon.",
     "highlights": [
@@ -124,7 +124,7 @@ window.GDS_PRODUCTS = [
       "Online license activation na may 14-araw na offline grace"
     ],
     "specs": {
-      "Presyo": "₱3,500 one-time kada PC — lifetime, walang buwanan",
+      "Presyo": "₱3,499 one-time kada PC — lifetime, walang buwanan",
       "License": "1 PC kada key, online activation, habambuhay",
       "Sinusuportahang unit": "Huawei HG8145X6-10 (stock R022 at R024)",
       "Operating system": "Windows 10 / 11, 64-bit",
