@@ -110,7 +110,7 @@ window.GDS_PRODUCTS = [
     "price": 3500,
     "priceNote": "One-time kada PC — lifetime license, walang renewal",
     "image": "gds-ont-flasher.jpg",
-    "images": ["gds-ont-flasher.jpg"],
+    "images": ["gds-ont-flasher.jpg", "gds-ont-flasher-2.jpg", "gds-ont-flasher-4.jpg", "gds-ont-flasher-3.jpg"],
     "summary":
       "Windows app na kumo-convert ng Huawei HG8145X6-10 ONT mula sa ISP-locked na firmware patungong open (COMMON “blue”) firmware — halos isang pindot lang. Awtomatiko ang buong proseso: nilo-login, binubuksan ang access, ina-upload ang firmware, at nire-restore ang credentials — LAN cable lang ang kailangan, walang serial box o hardware programmer. May built-in na safety checks na tumatanggi sa unit na hindi eligible bago pa magsimula, kaya brick-safe. Para lang ito sa unit na pag-aari mo o may pahintulot kang i-service.",
     "highlights": [
