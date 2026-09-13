@@ -73,7 +73,7 @@ window.GDS_CONFIG = {
   order: {
     // I-paste dito ang "Web app URL" mula sa Apps Script deployment.
     // Mukhang: "https://script.google.com/macros/s/AKfy..../exec"
-    endpoint: "https://script.google.com/macros/s/AKfycbyhyOhnk3J0ppnW0s3DmI1Ep6SFEJV9PqxKDdQtjVp0bBQn3H6B9Rd8EMdFwMGdlC50hg/exec",
+    endpoint: "https://script.google.com/macros/s/AKfycbwrCF0jvft5yGnhR_D46PadawuF2kkhL6JAB68JHtLlGOVFhbbPCTYaHvhUFPD-KRL8kA/exec",
     // Pangako mo sa delivery — lalabas sa lahat ng product page
     deliveryPromise: "Ipapadala within 1–6 oras pagka-verify ng bayad",
     // Max na laki ng screenshot na tatanggapin (MB)
