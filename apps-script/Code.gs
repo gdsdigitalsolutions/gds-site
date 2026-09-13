@@ -14,7 +14,7 @@
    ============================================================ */
 var SETTINGS = {
   // Email na tatanggap ng notification kada bagong order
-  ownerEmail: "PALITAN@gmail.com",
+  ownerEmail: "gdsdigisol@gmail.com",
 
   // Pangalan ng negosyo — lumalabas sa mga email
   businessName: "GDS Digital Solutions",
@@ -461,4 +461,30 @@ function testOrder() {
     source: "test"
   });
   Logger.log(JSON.stringify(res));
+}
+
+/* ============================================================
+   10. Auto-update ng "Last Update" kapag pinalitan ang Status
+   ------------------------------------------------------------
+   Simple trigger — kusang tumatakbo tuwing may ine-edit sa sheet.
+   Walang kailangang i-deploy ulit; i-save lang ang script.
+   ============================================================ */
+
+function onEdit(e) {
+  try {
+    if (!e || !e.range) return;
+    var sheet = e.range.getSheet();
+    if (sheet.getName() !== SETTINGS.sheetName) return;
+
+    // Status column lang ang binabantayan, at hindi ang header row
+    if (e.range.getColumn() !== COL["Status"]) return;
+
+    var start = Math.max(e.range.getRow(), 2);
+    var end = e.range.getRow() + e.range.getNumRows() - 1;
+    for (var r = start; r <= end; r++) {
+      sheet.getRange(r, COL["Last Update"]).setValue(new Date());
+    }
+  } catch (err) {
+    // Ang edit ay hindi dapat masira kahit pumalya ito
+  }
 }

@@ -100,6 +100,75 @@ window.GDS_PRODUCTS = [
   },
 
   {
+    "slug": "gds-ont-flasher",
+    "name": "GDS ONT Flasher",
+    "short": "One-click na pag-convert ng Huawei HG8145X6-10 mula ISP-locked patungong open (COMMON) firmware — automatic, brick-safe, may GPON at EPON changer.",
+    "category": "tool",
+    "categoryLabel": "Software Tool",
+    "badge": "Bagong labas",
+    "featured": true,
+    "price": 3500,
+    "priceNote": "One-time kada PC — lifetime license, walang renewal",
+    "image": "gds-ont-flasher.jpg",
+    "images": ["gds-ont-flasher.jpg"],
+    "summary":
+      "Windows app na kumo-convert ng Huawei HG8145X6-10 ONT mula sa ISP-locked na firmware patungong open (COMMON “blue”) firmware — halos isang pindot lang. Awtomatiko ang buong proseso: nilo-login, binubuksan ang access, ina-upload ang firmware, at nire-restore ang credentials — LAN cable lang ang kailangan, walang serial box o hardware programmer. May built-in na safety checks na tumatanggi sa unit na hindi eligible bago pa magsimula, kaya brick-safe. Para lang ito sa unit na pag-aari mo o may pahintulot kang i-service.",
+    "highlights": [
+      "One-click conversion — automatic mula sa pag-detect hanggang tapos, minimal na pindot",
+      "Brick-safe: may pre-flight check na tumatanggi sa hindi eligible na unit bago magsimula",
+      "Optical GPON ↔ EPON changer — reversible, pabalik-balik anumang oras",
+      "Sinusuportahan ang R022 at R024 na stock firmware — parehong na-validate sa totoong hardware",
+      "Ipinapakita ang bagong login credentials (web, telnet, at Wi-Fi) pagkatapos ng conversion",
+      "Kasama na ang lahat ng firmware sa loob ng app — walang hiwalay na hahanapin",
+      "Single .exe — walang i-install, buksan lang; may in-app na Help",
+      "Online license activation na may 14-araw na offline grace"
+    ],
+    "specs": {
+      "Presyo": "₱3,500 one-time kada PC — lifetime, walang buwanan",
+      "License": "1 PC kada key, online activation, habambuhay",
+      "Sinusuportahang unit": "Huawei HG8145X6-10 (stock R022 at R024)",
+      "Operating system": "Windows 10 / 11, 64-bit",
+      "Format ng bigay": "Single .exe (~170 MB) — download link + license key",
+      "Optical": "GPON ↔ EPON, reversible",
+      "Delivery": "Download link + key via email o Messenger pagka-verify ng bayad"
+    },
+    "requirements": [
+      "Windows 10 o 11 (64-bit) na PC o laptop",
+      "LAN cable papuntang ONT — hindi pwedeng WiFi lang ang koneksyon",
+      "ONT na pag-aari mo o may pahintulot ka nang i-service",
+      "Internet sa PC para sa isang beses na license activation"
+    ],
+    "warning":
+      "Para lang ito sa ONT na pag-aari mo o may pahintulot ka nang i-service. Ang pagbabago ng firmware ay may panganib na masira (brick) ang unit kapag hindi sinunod ang tamang paraan, at maaaring labag sa kasunduan mo sa iyong ISP kung naka-lease ang unit. May built-in na safety checks ang app, pero ikaw pa rin ang may responsibilidad na tiyakin na may karapatan kang baguhin ang unit bago ito gawin.",
+    "faq": [
+      {
+        "q": "Anong unit ang sinusuportahan?",
+        "a": "Huawei HG8145X6-10 na naka-stock firmware (R022 o R024) — parehong na-validate sa totoong hardware. Kung iba ang unit o firmware mo, message mo muna ako bago bumili at itsetsek ko kung kaya."
+      },
+      {
+        "q": "Paano kung ma-brick ang unit?",
+        "a": "May pre-flight check ang app na tumatanggi sa hindi eligible na unit bago pa magsimula, at may safety gates sa bawat hakbang — kaya nga brick-safe ang tawag dito. Na-validate na ito sa maraming totoong unit. Basahin mo ang in-app na Help bago magsimula, at kung may aberya, message mo ako at tutulungan kita — pero digital-at-hardware ang usapan, kaya hindi ako pwedeng mangako ng 100% recovery sa lahat ng kaso."
+      },
+      {
+        "q": "Ilang PC ang pwede kong gamitan?",
+        "a": "Isang PC kada license (online activation). Kung papalit ka ng PC o mag-format, message mo lang ako para i-transfer ang activation mo sa bagong makina — libre iyon."
+      },
+      {
+        "q": "Kailangan ba ng internet?",
+        "a": "Sa PC, oo — isang beses para sa license activation, tapos may 14-araw na offline grace kaya kaya mong gamitin kahit walang internet paminsan-minsan. Ang koneksyon sa ONT mismo ay via LAN cable, hindi internet."
+      },
+      {
+        "q": "Kasama ba ang firmware files?",
+        "a": "Oo — nasa loob na mismo ng app ang lahat ng firmware na kailangan. Walang hiwalay na hahanapin o ida-download."
+      },
+      {
+        "q": "Pwede bang gawing GPON o EPON?",
+        "a": "Oo. May optical changer na kayang mag-set ng GPON o EPON, at reversible ito — pabalik-balik anumang oras."
+      }
+    ]
+  },
+
+  {
     "slug": "website-development",
     "name": "Website at Landing Page Development",
     "short": "Ginagawa kong website ang negosyo mo — hindi template, hindi drag-and-drop.",
@@ -162,5 +231,6 @@ window.GDS_PRODUCTS = [
 window.GDS_CATEGORIES = [
   { id: "all", label: "Lahat" },
   { id: "system", label: "Business Systems" },
+  { id: "tool", label: "Software Tools" },
   { id: "service", label: "Serbisyo" }
 ];

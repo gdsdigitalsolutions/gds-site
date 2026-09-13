@@ -12,8 +12,9 @@ New-Item -ItemType Directory -Force -Path $out | Out-Null
 # Ang malaking teksto ay ang MODEL o BUILD — hindi ang pangalan ng product,
 # dahil nasa ibaba na naman ito bilang pamagat ng page.
 $items = @(
-  @{ file = "bayadtrack";          cat = "BUSINESS SYSTEM"; title = "BayadTrack"; sub = "Google Sheets   /   Kayang-kaya sa cellphone   /   Hanggang 1,000 kliyente" },
-  @{ file = "website-development"; cat = "SERBISYO";        title = "Websites";   sub = "Landing pages   /   Order at payment flow   /   Mobile-ready" }
+  @{ file = "bayadtrack";          cat = "BUSINESS SYSTEM"; title = "BayadTrack";      sub = "Google Sheets   /   Kayang-kaya sa cellphone   /   Hanggang 1,000 kliyente" },
+  @{ file = "gds-ont-flasher";     cat = "SOFTWARE TOOL";   title = "GDS ONT Flasher"; sub = "HG8145X6-10   /   One-click   /   GPON at EPON changer" },
+  @{ file = "website-development"; cat = "SERBISYO";        title = "Websites";        sub = "Landing pages   /   Order at payment flow   /   Mobile-ready" }
 )
 
 $W = 1600; $H = 1000
