@@ -107,7 +107,7 @@ window.GDS_PRODUCTS = [
     "categoryLabel": "Software Tool",
     "badge": "Bagong labas",
     "featured": true,
-    "price": 3500,
+    "price": 3499,
     "priceNote": "One-time kada PC — lifetime license, walang renewal",
     "image": "gds-ont-flasher.jpg",
     "images": ["gds-ont-flasher.jpg", "gds-ont-flasher-2.jpg", "gds-ont-flasher-4.jpg", "gds-ont-flasher-3.jpg"],
