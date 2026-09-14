@@ -383,20 +383,30 @@
     renderStep2();
   });
 
-  // Bagong order: kalimutan ang naunang reference at halaga, balik sa form
-  // (nananatili ang na-type na pangalan/contact para hindi na ulitin)
-  var newOrderBtn = document.getElementById("new-order");
-  if (newOrderBtn) {
-    newOrderBtn.addEventListener("click", function () {
-      state.ref = "";
-      state.amount = null;
-      state.email = "";
-      save();
-      document.getElementById("form-error").hidden = true;
-      updateSummary();
-      goStep(1);
-    });
+  // Magsimula ulit / i-reset: nililinis ang form, ang napiling resibo, at ang naka-save
+  // na order sa session, tapos balik sa Step 1 — para hindi ma-stuck kahit saang step.
+  function startOver() {
+    state.ref = "";
+    state.amount = null;
+    state.email = "";
+    state.method = "";
+    state.slug = "";
+    state.qty = 1;
+    save();
+    form.reset();
+    if (proofForm) proofForm.reset();
+    chosenFile = null;
+    if (input) input.value = "";
+    if (preview) preview.classList.remove("is-active");
+    document.getElementById("form-error").hidden = true;
+    document.getElementById("proof-error").hidden = true;
+    fillProducts();      // ibabalik ang product mula sa ?p= kung meron
+    updateSummary();
+    goStep(1);
   }
+  document.querySelectorAll("[data-start-over]").forEach(function (btn) {
+    btn.addEventListener("click", startOver);
+  });
 
   /* ---------- hakbang 3: proof ---------- */
   var chosenFile = null;
