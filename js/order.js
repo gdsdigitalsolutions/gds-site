@@ -90,10 +90,14 @@
       selPayment.required = true;
     }
 
-    state.slug = selProduct.value;
-    state.qty = qty;
-    state.method = selPayment.value;
-    save();
+    // Habang may naka-pending nang order (may reference na), huwag i-overwrite ang
+    // naka-save na product/dami/paraan — iyon ang ipinapakita sa Step 2.
+    if (!state.ref) {
+      state.slug = selProduct.value;
+      state.qty = qty;
+      state.method = selPayment.value;
+      save();
+    }
   }
 
   /* ---------- validation ---------- */
@@ -211,6 +215,16 @@
     var useBank = method === "Bank Transfer";
     var configured = useBank ? (!!bankNum || !!bankQR) : !!gcashNum;
 
+    // Pwedeng lumipat ng paraan ng bayad dito mismo sa Step 2 (kung naka-set ang isa pa)
+    var otherMethod = useBank ? "GCash" : "Bank Transfer";
+    var otherReady = (amount !== null && amount !== undefined) && (useBank ? !!gcashNum : (!!bankNum || !!bankQR));
+    var switchRow = otherReady
+      ? '<div style="text-align:center;margin-top:var(--s-4)">' +
+          '<button type="button" class="btn btn--ghost btn--sm" data-switch-method="' + otherMethod + '">' +
+            'Magbayad via ' + (useBank ? "GCash" : G.esc(bankName || "bank transfer")) + ' sa halip' +
+          '</button></div>'
+      : "";
+
     if (!configured) {
       return '' +
         '<div class="notice notice--info">' +
@@ -272,7 +286,8 @@
           "</div>" +
           rows +
         "</div>" +
-      "</div>";
+      "</div>" +
+      switchRow;
   }
 
   function copyBtn(sel) {
@@ -334,6 +349,7 @@
       state.email = payload.email;
       state.method = payload.paymentMethod;
       save();
+      updateSummary();   // tiyaking tugma ang "Buod ng order" sa ipinadalang order
       renderStep2();
       goStep(2);
     }).catch(function (err) {
@@ -354,6 +370,33 @@
       goStep(parseInt(btn.getAttribute("data-goto-step"), 10));
     });
   });
+
+  /* ---------- Step 2: lumipat ng paraan ng bayad / baguhin ang order ---------- */
+  document.getElementById("pay-panel").addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-switch-method]");
+    if (!btn) return;
+    var method = btn.getAttribute("data-switch-method");
+    selPayment.value = method;
+    state.method = method;
+    save();
+    updateSummary();
+    renderStep2();
+  });
+
+  // Bagong order: kalimutan ang naunang reference at halaga, balik sa form
+  // (nananatili ang na-type na pangalan/contact para hindi na ulitin)
+  var newOrderBtn = document.getElementById("new-order");
+  if (newOrderBtn) {
+    newOrderBtn.addEventListener("click", function () {
+      state.ref = "";
+      state.amount = null;
+      state.email = "";
+      save();
+      document.getElementById("form-error").hidden = true;
+      updateSummary();
+      goStep(1);
+    });
+  }
 
   /* ---------- hakbang 3: proof ---------- */
   var chosenFile = null;
@@ -469,7 +512,10 @@
         file: f
       });
     }).then(function () {
-      window.location.href = "confirmation.html?ref=" + encodeURIComponent(state.ref) + "&proof=1";
+      var doneRef = state.ref;
+      // Tapos na ang order na ito — huwag nang ibalik sa Step 2 kapag binuksan ulit ang page
+      try { sessionStorage.removeItem(STORE_KEY); } catch (e2) { /* private mode */ }
+      window.location.href = "confirmation.html?ref=" + encodeURIComponent(doneRef) + "&proof=1";
     }).catch(function (err) {
       showError("proof-error", "proof-error-msg", err.message);
       busy(btn, false);
@@ -478,7 +524,28 @@
 
   /* ---------- boot ---------- */
   load();
+
+  // May naka-pending na order pero IBANG product ang binuksan (?p=...) —
+  // bagong order iyon: huwag ipilit ang lumang reference at halaga.
+  var wantedSlug = new URLSearchParams(window.location.search).get("p");
+  if (state.ref && wantedSlug && wantedSlug !== state.slug) {
+    state.ref = "";
+    state.amount = null;
+    state.email = "";
+    state.method = "";
+    save();
+  }
+
   fillProducts();
+
+  // May naka-pending na order: ibalik sa form ang naka-save na product/dami/paraan
+  // para tugma ang "Buod ng order" sa payment panel
+  if (state.ref) {
+    if (G.bySlug(state.slug)) selProduct.value = state.slug;
+    inpQty.value = state.qty || 1;
+    selPayment.value = state.method || "";
+  }
+
   updateSummary();
 
   // Kapag may naunang order sa session na ito, ibalik ang customer sa hakbang 2
