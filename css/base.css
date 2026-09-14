@@ -137,7 +137,9 @@ code, kbd, .mono { font-family: var(--font-mono); font-size: .92em; }
 }
 .nav-toggle svg { width: 20px; height: 20px; }
 
-@media (max-width: 900px) {
+/* Ang buong desktop nav (brand + 5 link + button) ay ~1111px ang kailangan; sa ilalim
+   nito, lumalampas ito sa header. Kaya 1120px ang hamburger breakpoint (dati 900px). */
+@media (max-width: 1120px) {
   .nav-toggle { display: block; }
   .nav {
     display: none; position: absolute; left: 0; right: 0; top: 100%;
