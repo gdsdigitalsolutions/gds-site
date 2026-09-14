@@ -151,7 +151,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
           <div>
             <strong>Isang opisyal na account lang</strong>
-            <span>Ang GCash at bank details na nasa site na ito lang ang gamit namin.</span>
+            <span>Gamitin lang ang payment details na ipinapakita pagkatapos mong mag-order sa official GDS order process.</span>
           </div>
         </div>
         <div class="trust-item">
@@ -277,8 +277,8 @@
         <span class="eyebrow">Inaalok namin</span>
         <h2>Mga tapos na at handa nang gamitin</h2>
         <p>
-          Ito lang ang binebenta namin — mga produkto at serbisyong tapos na, na-test, at kaya
-          naming suportahan nang maayos. May iba pang binubuo, pero hindi namin ibebenta ang wala pa.
+          Products and services na tested, ready, at kaya naming suportahan.
+          May iba pang binubuo, pero hindi namin ibebenta ang wala pa.
         </p>
       </div>
 
@@ -326,95 +326,15 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Paraan ng Bayad</span>
-        <h2>GCash at bank transfer</h2>
-        <p>Ito ang opisyal na account ng GDS Digital Solutions. Makikita mo rin ang mga ito sa loob ng order form kasama ang eksaktong halagang babayaran mo.</p>
+        <h2>Payment details will be shown after you submit your order.</h2>
+        <p>After placing your order, makikita mo ang exact amount, official payment details, at QR code bago ka mag-upload ng proof of payment.</p>
       </div>
 
-      <div class="grid grid-2">
-        <div class="pay-card" data-gds-require="payment.gcash.accountNumber">
-          <div class="pay-card__head">
-            <span class="pay-card__logo pay-card__logo--gcash">GC</span>
-            <div>
-              <h3>GCash</h3>
-              <span>Pinakamabilis — ilang segundo lang</span>
-            </div>
-          </div>
-          <div class="pay-card__body">
-            <div class="field-row" data-gds-require="payment.gcash.accountName">
-              <div>
-                <div class="field-row__label">Account name</div>
-                <div class="field-row__value" data-gds-text="payment.gcash.accountName">—</div>
-              </div>
-            </div>
-            <div class="field-row">
-              <div>
-                <div class="field-row__label">GCash number</div>
-                <div class="field-row__value" id="gcash-num" data-gds-text="payment.gcash.accountNumber">—</div>
-              </div>
-              <button class="copy-btn" type="button" data-copy-from="#gcash-num">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
-                <span class="copy-btn__label">Kopyahin</span>
-              </button>
-            </div>
-            <p class="tiny muted" style="margin:0" data-gds-require="payment.gcash.accountName">
-              Bago ka magpadala, dapat <strong data-gds-text="payment.gcash.accountName">—</strong> ang
-              pangalang lalabas sa GCash app mo. Kung iba, huwag ituloy at i-message mo kami.
-            </p>
-            <div data-gds-require="payment.gcash.qrImage" style="text-align:center;padding-top:var(--s-2)">
-              <img data-gds-pay-img="payment.gcash.qrImage" src="data:," alt="GCash QR code" style="max-width:200px;margin:0 auto;border-radius:var(--r-md)">
-              <div class="tiny muted" style="margin-top:var(--s-2)">O i-scan na lang gamit ang GCash app</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="pay-card" data-gds-require-any="payment.bank.accountNumber, payment.bank.qrImage">
-          <div class="pay-card__head">
-            <span class="pay-card__logo pay-card__logo--bank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px" aria-hidden="true"><path d="M3 10l9-6 9 6M5 10v9M19 10v9M3 19h18M9 19v-5h6v5"/></svg>
-            </span>
-            <div>
-              <h3><span data-gds-text="payment.bank.bankName">Bank transfer</span></h3>
-              <span>InstaPay o PESONet mula sa kahit anong bangko</span>
-            </div>
-          </div>
-          <div class="pay-card__body">
-            <div class="field-row" data-gds-require="payment.bank.accountName">
-              <div>
-                <div class="field-row__label">Account name</div>
-                <div class="field-row__value" data-gds-text="payment.bank.accountName">—</div>
-              </div>
-            </div>
-            <div class="field-row" data-gds-require="payment.bank.accountNumber">
-              <div>
-                <div class="field-row__label">Account number</div>
-                <div class="field-row__value" id="bank-num" data-gds-text="payment.bank.accountNumber">—</div>
-              </div>
-              <button class="copy-btn" type="button" data-copy-from="#bank-num">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
-                <span class="copy-btn__label">Kopyahin</span>
-              </button>
-            </div>
-            <div data-gds-require="payment.bank.qrImage" style="text-align:center;padding-top:var(--s-2)">
-              <img data-gds-pay-img="payment.bank.qrImage" src="data:," alt="Bank QR code" style="max-width:200px;margin:0 auto;border-radius:var(--r-md)">
-              <div class="tiny muted" style="margin-top:var(--s-2)">O i-scan na lang gamit ang banking app mo</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="notice notice--info" data-gds-unless="payment.gcash.accountNumber, payment.bank.accountNumber" style="grid-column:1/-1">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
-          <div>
-            <strong>Inaayos pa ang payment details</strong>
-            Message mo muna kami sa Facebook para sa GCash at bank details habang ina-update namin ang page na ito.
-          </div>
-        </div>
-      </div>
-
-      <div class="notice notice--warn" style="margin-top:var(--s-5)">
+      <div class="notice notice--warn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l9 16H3z"/><path d="M12 9v5M12 17h.01"/></svg>
         <div>
-          <strong>Babala laban sa scam</strong>
-          Isang GCash at isang bank account lang ang gamit namin — ang nasa page na ito. Kung may nag-message sa iyo na ibang number o account, huwag magpadala at i-report mo agad sa amin.
+          <strong>For your security, use only the payment details shown after submitting your order through the official GDS order process.</strong>
+          Huwag mag-send ng payment sa account na galing sa unofficial message, comment, o ibang source.
         </div>
       </div>
     </div>
@@ -488,7 +408,7 @@
         <details>
           <summary>Ligtas bang magbayad dito?</summary>
           <div class="faq__answer">
-            <p>Hindi kami humihingi ng password, OTP, o card details — kailanman. Ang binabayaran mo ay direktang ipinapadala mo sa GCash o bank account na nakasulat sa page na ito, gamit ang sarili mong app. Ang site ay tumatanggap lang ng screenshot ng resibo bilang patunay.</p>
+            <p>Hindi kami humihingi ng password, OTP, o card details — kailanman. After submitting your order, makikita mo ang official GCash or bank payment details, exact amount, at QR code. Use only the payment details shown in your official GDS order page. Ang site ay tumatanggap lang ng screenshot ng resibo bilang patunay.</p>
             <p>Kung may nag-message sa iyo na humihingi ng OTP o nagbigay ng ibang account number, hindi iyon kami.</p>
           </div>
         </details>
@@ -601,7 +521,6 @@
           <li data-gds-require="contact.mobile">
             <a href="#" data-gds-href="contact.mobile"><span data-gds-text="contact.mobile">Mobile</span></a>
           </li>
-          <li data-gds-unless="contact.facebookPage, contact.messenger, contact.email, contact.mobile">Ina-update pa ang contact details.</li>
         </ul>
       </div>
     </div>
