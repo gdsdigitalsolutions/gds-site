@@ -31,7 +31,20 @@ window.GDS_PRODUCTS = [
     "price": 2499,
     "priceNote": "One-time lang. Walang monthly. Sa iyo ang file.",
     "image": "bayadtrack.jpg",
-    "images": ["bayadtrack.jpg", "bayadtrack-dashboard.jpg", "bayadtrack-followup.jpg", "bayadtrack-tracker.jpg", "bayadtrack-collection.jpg"],
+    "heroImage": "bayadtrack-dashboard.jpg",
+    "images": ["bayadtrack-dashboard.jpg", "bayadtrack-tracker.jpg", "bayadtrack-collection.jpg", "bayadtrack-followup.jpg"],
+    "imageInfo": {
+      "bayadtrack-dashboard.jpg":  { "alt": "BayadTrack dashboard showing overdue clients, collections and follow-up summary using fictional demo data", "caption": "Dashboard — makita agad kung sino ang may utang at magkano (demo · fictional data)" },
+      "bayadtrack-tracker.jpg":    { "alt": "BayadTrack client tracker showing payment status and balances using fictional demo data", "caption": "Tracker — isang view ng status ng lahat ng clients (demo · fictional data)" },
+      "bayadtrack-collection.jpg": { "alt": "BayadTrack collection sheet showing monthly client payment recording using fictional demo data", "caption": "Collection — mabilis na payment recording (demo · fictional data)" },
+      "bayadtrack-followup.jpg":   { "alt": "BayadTrack follow-up list showing clients with overdue balances using fictional demo data", "caption": "Follow Up — kusang listahan ng kailangang singilin (demo · fictional data)" }
+    },
+    "ctaLabel": "Get BayadTrack — ₱2,499",
+    "ctaSecondary": "Magtanong muna",
+    "unsureTitle": "Hindi ka sigurado kung bagay ang BayadTrack sa negosyo mo?",
+    "unsureLead": "",
+    "unsureTail": "at sabihin kung ilan ang clients mo at paano ka nangongolekta ngayon.",
+    "deliveryNote": "Pagka-verify ng payment, iko-coordinate namin ang client-list import, Google Drive setup, at walkthrough ng BayadTrack.",
     "summary":
       "Para sa mga nangongolekta ng buwanang bayad — internet reseller, kapitbahay-net, coop, o kahit anong negosyong may listahan ng singilin. Tina-type lang ng collector ang bayad sa phone habang nasa field; ilang segundo lang, updated na ang dashboard mo — magkano ang nakolekta ngayong araw, sino pa ang may utang, sino ang dapat i-follow up. Walang tawagan, walang \"i-send ko mamaya\". Hindi ito problema ng sipag — problema ito ng sistema, at ito ang sistemang inaayos iyon.",
     "highlights": [
@@ -54,7 +67,7 @@ window.GDS_PRODUCTS = [
       "Walkthrough": "30 minuto kasama ang collector — bayad, promise, bagong kabit, putol",
       "Kapasidad": "Hanggang 1,000 kliyente kada file",
       "Pagmamay-ari": "Sa iyo ang file — nasa Google Drive mo, hindi sa amin",
-      "Suporta": "Check-in pagkatapos ng unang buwan; aayusin natin kung may kulang"
+      "Suporta": "30 days support after setup, including a first-month check-in"
     },
     "requirements": [
       "Google account (libre)",
@@ -102,7 +115,7 @@ window.GDS_PRODUCTS = [
   {
     "slug": "gds-ont-flasher",
     "name": "GDS ONT Flasher",
-    "short": "One-click na pag-convert ng Huawei HG8145X6-10 mula ISP-locked patungong open (COMMON) firmware — automatic, brick-safe, may GPON at EPON changer.",
+    "short": "Windows service utility para sa supported Huawei HG8145X6-10 units. Guided conversion workflow with built-in safety checks, status monitoring, at GPON ↔ EPON mode switching. Validated on supported R022 & R024 variants · 1 PC per license key, online activation · For devices you own or are authorized to service.",
     "category": "tool",
     "categoryLabel": "Software Tool",
     "badge": "Bagong labas",
@@ -110,18 +123,28 @@ window.GDS_PRODUCTS = [
     "price": 3499,
     "priceNote": "One-time kada PC — lifetime license, walang renewal",
     "image": "gds-ont-flasher.jpg",
-    "images": ["gds-ont-flasher.jpg", "gds-ont-flasher-2.jpg", "gds-ont-flasher-4.jpg", "gds-ont-flasher-3.jpg"],
+    "heroImage": "gds-ont-flasher-3.jpg",
+    "images": ["gds-ont-flasher-3.jpg", "gds-ont-flasher-2.jpg", "gds-ont-flasher-4.jpg"],
+    "imageInfo": {
+      "gds-ont-flasher-3.jpg": { "alt": "GDS ONT Flasher Windows application showing conversion controls, progress and GPON EPON options", "caption": "Conversion complete — progress stages at session log (device access details naka-mask)" },
+      "gds-ont-flasher-2.jpg": { "alt": "GDS ONT Flasher main window before a conversion, showing the pre-flight notices, optical mode choice and Start conversion button", "caption": "Bago magsimula — notices, optical mode, at Start conversion" },
+      "gds-ont-flasher-4.jpg": { "alt": "GDS ONT Flasher pre-flight confirmation dialog showing the detected model and firmware variant, with brand and serial censored", "caption": "Pre-flight confirmation — model at firmware variant bago magpatuloy" }
+    },
+    "unsureTitle": "Hindi ka sigurado?",
+    "unsureLead": "Mas mabuting magtanong muna kaysa mabili ang maling bagay.",
+    "unsureTail": "ng model ng unit mo.",
+    "deliveryNote": "Pagka-verify ng bayad, ipapadala namin ang download link at license key via email o Messenger.",
     "summary":
-      "Windows app na kumo-convert ng Huawei HG8145X6-10 ONT mula sa ISP-locked na firmware patungong open (COMMON “blue”) firmware — halos isang pindot lang. Awtomatiko ang buong proseso: nilo-login, binubuksan ang access, ina-upload ang firmware, at nire-restore ang credentials — LAN cable lang ang kailangan, walang serial box o hardware programmer. May built-in na safety checks na tumatanggi sa unit na hindi eligible bago pa magsimula, kaya brick-safe. Para lang ito sa unit na pag-aari mo o may pahintulot kang i-service.",
+      "A guided Windows service utility designed for supported Huawei HG8145X6-10 units. It automates the validated service workflow for supported R022/R024 firmware variants, with pre-flight checks, conversion status monitoring, and GPON ↔ EPON mode switching. ₱3,499 one-time · 1 PC per license key · No monthly subscription. Intended only for hardware you own or are authorized to configure, repair, or service.",
     "highlights": [
-      "One-click conversion — automatic mula sa pag-detect hanggang tapos, minimal na pindot",
-      "Brick-safe: may pre-flight check na tumatanggi sa hindi eligible na unit bago magsimula",
-      "Optical GPON ↔ EPON changer — reversible, pabalik-balik anumang oras",
-      "Sinusuportahan ang R022 at R024 na stock firmware — parehong na-validate sa totoong hardware",
-      "Ipinapakita ang bagong login credentials (web, telnet, at Wi-Fi) pagkatapos ng conversion",
-      "Kasama na ang lahat ng firmware sa loob ng app — walang hiwalay na hahanapin",
-      "Single .exe — walang i-install, buksan lang; may in-app na Help",
-      "Online license activation na may 14-araw na offline grace"
+      "Guided one-click conversion workflow — pre-flight checks bago magsimula, tapos hakbang-hakbang na status habang tumatakbo",
+      "Supported unit: Huawei HG8145X6-10 — validated sa R022 at R024 firmware variants sa totoong hardware",
+      "Built-in pre-flight checks — tinitingnan muna ang model at firmware variant; hindi magpapatuloy kapag hindi supported",
+      "Conversion progress monitoring — live na listahan ng bawat hakbang at session log",
+      "GPON ↔ EPON mode switching — reversible optical changer para sa converted unit",
+      "Package integrity verification — sine-check ang package bago ang bawat run",
+      "Ipinapakita ang device access details pagkatapos ng conversion (web, telnet, at Wi-Fi SSID)",
+      "Single .exe na may in-app na Help; online license activation, 1 PC kada key, may 14-araw na offline grace"
     ],
     "specs": {
       "Presyo": "₱3,499 one-time kada PC — lifetime, walang buwanan",
@@ -140,6 +163,14 @@ window.GDS_PRODUCTS = [
     ],
     "warning":
       "Para lang ito sa ONT na pag-aari mo o may pahintulot ka nang i-service. Ang pagbabago ng firmware ay may panganib na masira (brick) ang unit kapag hindi sinunod ang tamang paraan, at maaaring labag sa kasunduan mo sa iyong ISP kung naka-lease ang unit. May built-in na safety checks ang app, pero ikaw pa rin ang may responsibilidad na tiyakin na may karapatan kang baguhin ang unit bago ito gawin.",
+    "useNotice": {
+      "title": "Compatibility & Use Notice",
+      "paragraphs": [
+        "GDS ONT Flasher is intended for qualified users servicing supported hardware they own or are authorized to service.",
+        "Compatibility is limited to specifically tested models and firmware variants. Firmware modification carries inherent risk and results may vary depending on hardware and firmware condition.",
+        "GDS Digital Solutions is not affiliated with or endorsed by Huawei or any internet service provider. Product and company names referenced for compatibility purposes remain the property of their respective owners."
+      ]
+    },
     "faq": [
       {
         "q": "Anong unit ang sinusuportahan?",
@@ -147,7 +178,7 @@ window.GDS_PRODUCTS = [
       },
       {
         "q": "Paano kung ma-brick ang unit?",
-        "a": "May pre-flight check ang app na tumatanggi sa hindi eligible na unit bago pa magsimula, at may safety gates sa bawat hakbang — kaya nga brick-safe ang tawag dito. Na-validate na ito sa maraming totoong unit. Basahin mo ang in-app na Help bago magsimula, at kung may aberya, message mo ako at tutulungan kita — pero digital-at-hardware ang usapan, kaya hindi ako pwedeng mangako ng 100% recovery sa lahat ng kaso."
+        "a": "May pre-flight checks ang app na hindi magpapatuloy kapag hindi supported ang unit o firmware variant, at may safety gates sa bawat hakbang. Pero ang pagbabago ng firmware ay laging may kaakibat na panganib, at maaaring mag-iba ang resulta depende sa kondisyon ng hardware at firmware — hindi kami makakapangako ng 100% recovery sa lahat ng kaso. Basahin mo ang in-app na Help bago magsimula, at kung may aberya, message mo kami at tutulungan ka namin hangga't kaya."
       },
       {
         "q": "Ilang PC ang pwede kong gamitan?",
@@ -159,7 +190,7 @@ window.GDS_PRODUCTS = [
       },
       {
         "q": "Kasama ba ang firmware files?",
-        "a": "Oo — nasa loob na mismo ng app ang lahat ng firmware na kailangan. Walang hiwalay na hahanapin o ida-download."
+        "a": "Kumpleto ang package — walang hiwalay na ida-download o hahanapin. May package integrity verification na sine-check ang package bago magsimula ang bawat run."
       },
       {
         "q": "Pwede bang gawing GPON o EPON?",
@@ -180,6 +211,10 @@ window.GDS_PRODUCTS = [
     "priceNote": "Nakadepende sa laki — libre ang quote",
     "image": "website-development.jpg",
     "images": ["website-development.jpg"],
+    "unsureTitle": "Hindi ka sigurado?",
+    "unsureLead": "Mas mabuting magtanong muna kaysa mabili ang maling bagay.",
+    "unsureTail": "kung anong klaseng site ang kailangan mo.",
+    "deliveryNote": "Pagka-verify ng unang bayad, kakausapin ka namin para sa detalye ng project at sisimulan ang disenyo.",
     "quoteOnly": true,
     "summary":
       "Gumagawa ako ng website at landing page para sa maliliit na negosyo sa Pilipinas — mula sa isang page na pangbenta hanggang sa buong catalog na may order at payment flow, katulad mismo ng site na binabasa mo ngayon. Kinakausap muna kita bago mag-disenyo; walang template na binabago lang ang kulay.",

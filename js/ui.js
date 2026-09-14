@@ -251,7 +251,12 @@
     thumbs.addEventListener("click", function (e) {
       var btn = e.target.closest("button");
       if (!btn || !main) return;
-      main.src = btn.querySelector("img").src;
+      var img = btn.querySelector("img");
+      main.src = img.src;
+      if (img.alt) main.alt = img.alt;
+      // Caption ng napiling larawan (kung may data-caption ang thumb)
+      var cap = document.querySelector("[data-gallery-caption]");
+      if (cap && btn.hasAttribute("data-caption")) cap.textContent = btn.getAttribute("data-caption");
       thumbs.querySelectorAll("button").forEach(function (b) {
         b.setAttribute("aria-current", b === btn ? "true" : "false");
       });

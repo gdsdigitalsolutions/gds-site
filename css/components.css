@@ -396,7 +396,8 @@ select {
   aspect-ratio: 16 / 10; border-radius: var(--r-lg); overflow: hidden;
   border: 1px solid var(--border); background: var(--navy-900);
 }
-.gallery__main img { width: 100%; height: 100%; object-fit: cover; }
+/* contain (hindi cover) para buo at mababasa ang totoong screenshot; navy ang letterbox */
+.gallery__main img { width: 100%; height: 100%; object-fit: contain; }
 .gallery__thumbs { display: flex; gap: var(--s-3); margin-top: var(--s-3); flex-wrap: wrap; }
 .gallery__thumbs button {
   width: 84px; aspect-ratio: 16/10; padding: 0; border-radius: var(--r-sm); overflow: hidden;
@@ -404,6 +405,7 @@ select {
 }
 .gallery__thumbs button[aria-current="true"] { border-color: var(--accent); }
 .gallery__thumbs img { width: 100%; height: 100%; object-fit: cover; }
+.gallery__caption { margin-top: var(--s-3); }
 
 .buy-box { border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--surface); overflow: hidden; box-shadow: var(--shadow-md); }
 .buy-box__price { padding: var(--s-5); border-bottom: 1px solid var(--border); background: var(--surface-2); }

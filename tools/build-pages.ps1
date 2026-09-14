@@ -103,19 +103,53 @@ foreach ($p in $products) {
 "@
   }
 
-  # -- thumbs (kapag mahigit isa ang larawan) --
+  # -- thumbs (kapag mahigit isa ang larawan) — may alt at caption kada larawan mula sa imageInfo --
   $thumbs = ""
   if ($p.images.Count -gt 1) {
     $btns = ""
     for ($i = 0; $i -lt $p.images.Count; $i++) {
       $cur = if ($i -eq 0) { "true" } else { "false" }
-      $btns += "<button type=`"button`" aria-current=`"$cur`" aria-label=`"Larawan $($i+1)`"><img src=`"../../assets/products/$($p.images[$i])`" alt=`"`" loading=`"lazy`"></button>`n              "
+      $info = if ($p.imageInfo) { $p.imageInfo.($p.images[$i]) } else { $null }
+      $alt = if ($info -and $info.alt) { AttrEnc $info.alt } else { "" }
+      $capAttr = if ($info -and $info.caption) { " data-caption=`"" + (AttrEnc $info.caption) + "`"" } else { "" }
+      $btns += "<button type=`"button`" aria-current=`"$cur`" aria-label=`"Larawan $($i+1)`"$capAttr><img src=`"../../assets/products/$($p.images[$i])`" alt=`"$alt`" loading=`"lazy`"></button>`n              "
     }
     $thumbs = "<div class=`"gallery__thumbs`">`n              $btns</div>"
   }
 
-  # -- CTA label --
-  $cta = if ($p.quoteOnly) { "Humingi ng quote" } else { "Umorder ngayon" }
+  # -- CTA labels (pwedeng i-override kada produkto sa products.js) --
+  $cta = if ($p.ctaLabel) { $p.ctaLabel } elseif ($p.quoteOnly) { "Humingi ng quote" } else { "Umorder ngayon" }
+  $ctaSecondary = if ($p.ctaSecondary) { $p.ctaSecondary } else { "Magtanong muna sa Messenger" }
+
+  # -- Presyo bilang static na teksto (pareho ng ui.js priceLabel; pinapalitan din ito ng JS) --
+  $priceLabel = if ($p.quoteOnly) { "Libreng quote" } elseif ($null -eq $p.price) { "Message for price" } else { "₱" + [string]::Format([System.Globalization.CultureInfo]::InvariantCulture, "{0:N0}", $p.price) }
+
+  # -- Hero image ng product page (hiwalay sa card/share image na `image`) --
+  $hero     = if ($p.heroImage) { $p.heroImage } else { $p.image }
+  $heroInfo = if ($p.imageInfo) { $p.imageInfo.($hero) } else { $null }
+  $heroAlt  = if ($heroInfo -and $heroInfo.alt) { AttrEnc $heroInfo.alt } else { AttrEnc $p.name }
+  $caption  = if ($heroInfo -and $heroInfo.caption) { "<p class=`"gallery__caption small muted`" data-gallery-caption>" + (HtmlEnc $heroInfo.caption) + "</p>" } else { "" }
+
+  # -- "Hindi ka sigurado?" notice at delivery note — kada produkto, may default --
+  $unsureTitle  = if ($p.unsureTitle) { HtmlEnc $p.unsureTitle } else { "Hindi ka sigurado?" }
+  $unsureLead   = if ($null -ne $p.unsureLead) { HtmlEnc $p.unsureLead } else { "Mas mabuting magtanong muna kaysa mabili ang maling bagay." }
+  $unsureTail   = if ($p.unsureTail) { HtmlEnc $p.unsureTail } else { "ng model ng unit mo." }
+  $deliveryNote = if ($p.deliveryNote) { HtmlEnc $p.deliveryNote } else { "Tinitingnan namin ang bayad, tapos ipinapadala namin ang binili mo — download link at license key, o setup, depende sa produkto —" }
+
+  # -- Compatibility & Use Notice (opsyonal kada produkto) --
+  $useNotice = ""
+  if ($p.useNotice) {
+    $paras = ($p.useNotice.paragraphs | ForEach-Object { "<p>" + (HtmlEnc $_) + "</p>" }) -join "`n                "
+    $useNotice = @"
+<div class="notice notice--info" style="margin-top:var(--s-5)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
+              <div>
+                <strong>$(HtmlEnc $p.useNotice.title)</strong>
+                $paras
+              </div>
+            </div>
+"@
+  }
 
   # -- JSON-LD --
   $ld = [ordered]@{
@@ -145,9 +179,18 @@ foreach ($p in $products) {
   $out = $out.Replace("{{SUMMARY}}",        (HtmlEnc $p.summary))
   $out = $out.Replace("{{CATEGORY}}",       $p.category)
   $out = $out.Replace("{{CATEGORY_LABEL}}", (HtmlEnc $p.categoryLabel))
-  $out = $out.Replace("{{IMAGE}}",          $p.image)
+  $out = $out.Replace("{{IMAGE_ALT}}",      $heroAlt)
+  $out = $out.Replace("{{IMAGE}}",          $hero)
+  $out = $out.Replace("{{CAPTION}}",        $caption)
+  $out = $out.Replace("{{PRICE_LABEL}}",    $priceLabel)
   $out = $out.Replace("{{PRICE_NOTE}}",     (HtmlEnc $p.priceNote))
-  $out = $out.Replace("{{CTA_LABEL}}",      $cta)
+  $out = $out.Replace("{{CTA_LABEL}}",      (HtmlEnc $cta))
+  $out = $out.Replace("{{CTA_SECONDARY}}",  (HtmlEnc $ctaSecondary))
+  $out = $out.Replace("{{UNSURE_TITLE}}",   $unsureTitle)
+  $out = $out.Replace("{{UNSURE_LEAD}}",    $unsureLead)
+  $out = $out.Replace("{{UNSURE_TAIL}}",    $unsureTail)
+  $out = $out.Replace("{{DELIVERY_NOTE}}",  $deliveryNote)
+  $out = $out.Replace("{{USE_NOTICE}}",     $useNotice)
   $out = $out.Replace("{{HIGHLIGHTS}}",     $highlights)
   $out = $out.Replace("{{SPECS}}",          $specRows.TrimEnd())
   $out = $out.Replace("{{REQUIREMENTS}}",   $reqs)
