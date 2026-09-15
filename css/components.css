@@ -451,7 +451,6 @@ select {
 .cta-band h2 { color: #fff; }
 .cta-band p { color: #b8cdec; max-width: 56ch; margin: var(--s-4) auto 0; }
 .cta-band .btn-row { justify-content: center; margin-top: var(--s-6); }
-.cta-logo { display: block; height: auto; width: auto; max-height: 60px; max-width: min(300px, 78%); margin: 0 auto var(--s-4); }
 
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
