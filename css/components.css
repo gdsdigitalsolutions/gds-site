@@ -453,3 +453,8 @@ select {
 .cta-band .btn-row { justify-content: center; margin-top: var(--s-6); }
 
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Official BayadTrack logo — homepage section at product page (transparent PNG) */
+.section-logo { display: block; height: auto; width: auto; max-height: 72px; max-width: min(340px, 82%); margin-bottom: var(--s-3); }
+.product-logo { display: block; height: auto; width: auto; max-height: 54px; max-width: min(300px, 72%); margin-bottom: var(--s-4); }
+@media (max-width: 640px) { .section-logo { max-height: 58px; } }

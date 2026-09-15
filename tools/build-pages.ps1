@@ -173,6 +173,7 @@ foreach ($p in $products) {
 
   # -- palitan ang mga placeholder --
   $out = $tpl
+  $productLogo = if ($p.logo) { "<img class=""product-logo"" src=""../../assets/products/$($p.logo)"" alt=""$(HtmlEnc $p.name) logo"" loading=""eager"">" } else { "" }
   $out = $out.Replace("{{SLUG}}",           $p.slug)
   $out = $out.Replace("{{NAME}}",           (HtmlEnc $p.name))
   $out = $out.Replace("{{SHORT}}",          (AttrEnc $p.short))
@@ -181,6 +182,7 @@ foreach ($p in $products) {
   $out = $out.Replace("{{CATEGORY_LABEL}}", (HtmlEnc $p.categoryLabel))
   $out = $out.Replace("{{IMAGE_ALT}}",      $heroAlt)
   $out = $out.Replace("{{IMAGE}}",          $hero)
+  $out = $out.Replace("{{PRODUCT_LOGO}}",   $productLogo)
   $out = $out.Replace("{{CAPTION}}",        $caption)
   $out = $out.Replace("{{PRICE_LABEL}}",    $priceLabel)
   $out = $out.Replace("{{PRICE_NOTE}}",     (HtmlEnc $p.priceNote))

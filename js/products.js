@@ -32,6 +32,7 @@ window.GDS_PRODUCTS = [
     "priceNote": "One-time payment. Walang monthly. Sa iyo ang file.",
     "image": "bayadtrack.jpg",
     "cardImage": "bayadtrack-dashboard.jpg",
+    "logo": "bayadtrack-logo.png",
     "heroImage": "bayadtrack-dashboard.jpg",
     "images": ["bayadtrack-dashboard.jpg", "bayadtrack-tracker.jpg", "bayadtrack-collection.jpg", "bayadtrack-followup.jpg"],
     "imageInfo": {
