@@ -67,28 +67,28 @@
             <span class="ladder__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
             <div>
               <strong>Naitala ang order mo</strong>
-              <span>May kopya na kami ng detalye mo at ng reference number.</span>
+              <span>Nasa amin na ang detalye mo at ang order reference.</span>
             </div>
           </li>
           <li id="step-proof">
             <span class="ladder__dot">2</span>
             <div>
               <strong>Proof of payment</strong>
-              <span id="proof-text">Magbayad gamit ang GCash o bank transfer, tapos i-upload ang screenshot ng resibo. I-save ang reference mo — magagamit mo ito sa Track Order.</span>
+              <span id="proof-text">Magbayad via GCash o bank transfer, tapos i-upload ang screenshot ng resibo. I-save ang reference mo — magagamit mo ito sa Track Order.</span>
             </div>
           </li>
           <li class="is-current">
             <span class="ladder__dot">3</span>
             <div>
               <strong>Verification</strong>
-              <span>Che-check namin ang bayad mo. Manu-mano ito, kaya hindi instant — pero sigurado.</span>
+              <span>Ive-verify namin ang bayad mo. Manu-mano ito, kaya hindi instant — pero sigurado.</span>
             </div>
           </li>
           <li>
             <span class="ladder__dot">4</span>
             <div>
               <strong>Delivery</strong>
-              <span>Kakausapin ka namin para sa setup at ilalagay ang sistema sa Google Drive mo — <span data-gds-text="order.deliveryPromise">karaniwang ilang oras lang</span>.</span>
+              <span>Kakausapin ka namin para sa setup o ipapadala ang binili mo, depende sa produkto — <span data-gds-text="order.deliveryPromise">karaniwang ilang oras lang</span>.</span>
             </div>
           </li>
         </ul>
@@ -97,8 +97,8 @@
       <div class="notice notice--info" style="margin-top:var(--s-5)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
         <div>
-          <strong>Hindi natanggap ang email?</strong>
-          Tingnan mo ang Spam o Promotions folder. Kung wala pa rin, i-message mo kami kasama ang reference number mo at aayusin namin agad.
+          <strong>Walang confirmation email?</strong>
+          Tingnan ang Spam o Promotions folder. Kung wala pa rin, i-message mo kami kasama ang reference mo at aasikasuhin namin agad.
         </div>
       </div>
 
@@ -141,9 +141,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (hasProof) {
-    document.getElementById("head-title").textContent = "Natanggap namin ang bayad mo";
+    document.getElementById("head-title").textContent = "Natanggap namin ang proof of payment mo";
     document.getElementById("head-sub").textContent =
-      "Nasa amin na ang screenshot ng resibo mo. Ve-verify namin ito at kakausapin ka namin para sa setup.";
+      "Nasa amin na ang screenshot ng resibo mo. Ive-verify namin ito, tapos kakausapin ka namin para sa setup o delivery.";
     var li = document.getElementById("step-proof");
     li.classList.add("is-done");
     li.querySelector(".ladder__dot").innerHTML =

@@ -63,7 +63,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l9 16H3z"/><path d="M12 9v5M12 17h.01"/></svg>
         <div>
           <strong>Hindi pa aktibo ang online order form</strong>
-          Habang inaayos namin ito, i-message mo na lang kami sa Facebook para umorder — sagutin namin agad.
+          Habang inaayos namin ito, i-message mo na lang kami sa Facebook para umorder — sasagutin ka namin agad.
           <span data-gds-require="contact.messenger"> <a href="#" data-gds-href="contact.messenger" rel="noopener">Buksan ang Messenger</a>.</span>
         </div>
       </div>
@@ -81,8 +81,8 @@
           <div class="flow-step is-active" data-flow-step="1">
             <h1 style="font-size:clamp(1.6rem,1.2rem+1.6vw,2.2rem)">Detalye ng order</h1>
             <p class="lead" style="margin:var(--s-3) 0 var(--s-6)">
-              Punan ito at bibigyan ka namin agad ng <strong>Order Reference</strong>.
-              Wala kaming hinihinging password, OTP, o card details — kailanman.
+              Punan ang form at makukuha mo agad ang <strong>order reference</strong> mo.
+              Hindi kami humihingi ng password, OTP, o card details — kailanman.
             </p>
 
             <form id="order-form" novalidate>
@@ -115,7 +115,7 @@
                 <div class="field">
                   <label for="f-name">Buong pangalan <span class="req" aria-hidden="true">*</span></label>
                   <input type="text" id="f-name" name="name" autocomplete="name" required placeholder="Hal. Juan Dela Cruz">
-                  <span class="field__hint">Ilagay ang pangalang gagamitin mo sa pagbabayad kung kaya.</span>
+                  <span class="field__hint">Kung maaari, ang pangalang gagamitin mo sa pagbabayad.</span>
                   <span class="field__error" data-error-for="name">Kailangan ang pangalan mo.</span>
                 </div>
 
@@ -123,7 +123,7 @@
                   <div class="field">
                     <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
                     <input type="email" id="f-email" name="email" autocomplete="email" required placeholder="ikaw@email.com">
-                    <span class="field__hint">Dito ipapadala ang kumpirmasyon at ang file mo.</span>
+                    <span class="field__hint">Dito ipapadala ang confirmation at mga update ng order mo.</span>
                     <span class="field__error" data-error-for="email">Ilagay ang tamang email address.</span>
                   </div>
                   <div class="field">
@@ -136,12 +136,12 @@
                 <div class="field">
                   <label for="f-messenger">Pangalan sa Facebook o Messenger</label>
                   <input type="text" id="f-messenger" name="messenger" placeholder="Hal. Juan Dela Cruz — o link ng profile mo">
-                  <span class="field__hint">Opsyonal, pero mas mabilis kaming makakausap dito kapag may tanong.</span>
+                  <span class="field__hint">Opsyonal, pero mas mabilis ang usapan dito kapag may tanong.</span>
                 </div>
 
                 <div class="field">
                   <label for="f-notes">Detalye ng negosyo mo o tanong</label>
-                  <textarea id="f-notes" name="notes" placeholder="Hal. mga 60 kliyente sa 3 purok, notebook pa ang gamit ko ngayon, may ilang may utang na 2–3 buwan. O kahit anong gusto mong sabihin bago tayo mag-setup."></textarea>
+                  <textarea id="f-notes" name="notes" placeholder="Hal. mga 60 kliyente sa 3 purok, notebook pa ang gamit ko ngayon, may ilang may utang na 2–3 buwan. O kahit anong gusto mong sabihin bago ang setup."></textarea>
                 </div>
 
                 <!-- honeypot: hindi ito nakikita ng tao -->
@@ -152,7 +152,7 @@
 
                 <label style="display:flex;gap:var(--s-3);align-items:flex-start;font-size:.9375rem;cursor:pointer">
                   <input type="checkbox" id="f-agree" name="agree" required style="width:18px;height:18px;margin-top:3px;flex:none">
-                  <span>Nabasa at sang-ayon ako sa <a href="../terms/" target="_blank" rel="noopener">Terms of Service</a> at <a href="../refund/" target="_blank" rel="noopener">Refund Policy</a>. Naiintindihan kong digital ang produkto at may kaakibat itong panganib na nakasulat sa product page.</span>
+                  <span>Nabasa ko at sang-ayon ako sa <a href="../terms/" target="_blank" rel="noopener">Terms of Service</a> at <a href="../refund/" target="_blank" rel="noopener">Refund Policy</a>. Naiintindihan kong digital ang produkto at may kaakibat itong panganib na nakasulat sa product page.</span>
                 </label>
                 <span class="field__error" data-error-for="agree" style="display:none">Kailangan mong sang-ayon bago tumuloy.</span>
 
@@ -176,7 +176,7 @@
           <div class="flow-step" data-flow-step="2">
             <h2>Bayaran ang order mo</h2>
             <p class="lead" style="margin:var(--s-3) 0 var(--s-5)">
-              Naitala na namin ang order mo. Ito ang reference mo — gamitin mo ito sa pagbabayad at sa pag-track.
+              Naitala na ang order mo. Ito ang reference mo — gamitin ito sa pagbabayad at sa pag-track.
             </p>
 
             <div style="display:flex;flex-wrap:wrap;gap:var(--s-3);align-items:center;margin-bottom:var(--s-5)">
@@ -191,7 +191,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l9 16H3z"/><path d="M12 9v5M12 17h.01"/></svg>
               <div>
                 <strong>Ilagay ang reference sa notes ng bayad</strong>
-                Kapag nasa notes o message ng bayad mo ang <span class="mono" id="ref-inline">reference</span>, agad naming makikita kung kanino ito galing. Kung nakalimutan mo, okay lang — sabihin mo na lang sa amin.
+                Kapag nasa notes o message ng bayad mo ang <span class="mono" id="ref-inline">reference</span>, agad naming makikita kung kanino ito galing. Nakalimutan? Okay lang — sabihin mo lang sa amin.
               </div>
             </div>
 
@@ -199,16 +199,16 @@
 
             <div class="btn-row" style="margin-top:var(--s-6)">
               <button type="button" class="btn btn--accent btn--lg" data-goto-step="3">
-                Nakabayad na ako — mag-upload ng resibo
+                Nakabayad na ako — i-upload ang proof of payment
               </button>
-              <a class="btn btn--outline btn--lg" href="../track/" id="pay-later">Bayaran ko mamaya</a>
+              <a class="btn btn--outline btn--lg" href="../track/" id="pay-later">Magbabayad ako mamaya</a>
             </div>
             <div style="margin-top:var(--s-3)">
               <button type="button" class="btn btn--ghost btn--sm" data-start-over>&#8635; Magsimula ulit — i-reset ang order (bagong reference)</button>
             </div>
 
             <p class="tiny muted" style="margin-top:var(--s-4)">
-              I-save o i-screenshot ang reference mo — ito ang gagamitin mo sa pagbabayad at sa pag-track kahit isara mo ang page.
+              I-save o i-screenshot ang reference mo — ito ang gagamitin mo sa pagbabayad at sa pag-track, kahit isara mo ang page.
             </p>
           </div>
 
@@ -216,7 +216,7 @@
           <div class="flow-step" data-flow-step="3">
             <h2>I-upload ang proof of payment</h2>
             <p class="lead" style="margin:var(--s-3) 0 var(--s-5)">
-              Screenshot ng resibo mula sa GCash o sa banking app mo. Ito ang titingnan namin bago ipadala ang file mo.
+              I-upload ang screenshot ng resibo mula sa GCash o banking app mo. Ito ang ive-verify namin bago ang setup o delivery.
             </p>
 
             <div style="display:flex;flex-wrap:wrap;gap:var(--s-3);align-items:center;margin-bottom:var(--s-5)">
@@ -243,7 +243,7 @@
               <div class="field" style="margin-top:var(--s-5)">
                 <label for="f-paid-ref">Reference number ng bayad mo</label>
                 <input type="text" id="f-paid-ref" name="paidRef" placeholder="Hal. ang 13-digit na ref no. ng GCash">
-                <span class="field__hint">Opsyonal, pero mas mabilis ang verification kapag nandito ito.</span>
+                <span class="field__hint">Opsyonal, pero mas mabilis ang verification kapag kasama ito.</span>
               </div>
 
               <div id="proof-error" class="notice notice--error" hidden style="margin-top:var(--s-4)">
@@ -257,7 +257,7 @@
             </form>
 
             <p class="small muted center" style="margin-top:var(--s-4)">
-              Ayaw mag-upload dito? <a href="#" data-gds-href="contact.messenger" rel="noopener">Ipadala na lang sa Messenger</a>
+              Mas gusto mong sa Messenger? <a href="#" data-gds-href="contact.messenger" rel="noopener">Ipadala na lang doon</a>
               kasama ang reference mo — pareho lang.
             </p>
 
