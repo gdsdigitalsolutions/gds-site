@@ -174,7 +174,7 @@
     return '' +
       '<article class="product-card" data-category="' + esc(p.category) + '">' +
         '<a class="product-card__media" href="' + href + '" tabindex="-1" aria-hidden="true">' +
-          '<img src="' + root() + 'assets/products/' + esc(p.image) + '" alt="" loading="lazy" width="1600" height="1000">' +
+          '<img src="' + root() + 'assets/products/' + esc(p.cardImage || p.image) + '" alt="" loading="lazy" width="1600" height="1000">' +
           '<span class="tag">' + esc(p.categoryLabel) + '</span>' +
         '</a>' +
         '<div class="product-card__body">' +

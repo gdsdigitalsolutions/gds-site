@@ -31,6 +31,7 @@ window.GDS_PRODUCTS = [
     "price": 2499,
     "priceNote": "One-time payment. Walang monthly. Sa iyo ang file.",
     "image": "bayadtrack.jpg",
+    "cardImage": "bayadtrack-dashboard.jpg",
     "heroImage": "bayadtrack-dashboard.jpg",
     "images": ["bayadtrack-dashboard.jpg", "bayadtrack-tracker.jpg", "bayadtrack-collection.jpg", "bayadtrack-followup.jpg"],
     "imageInfo": {
@@ -123,6 +124,7 @@ window.GDS_PRODUCTS = [
     "price": 3499,
     "priceNote": "One-time kada PC — lifetime license, walang renewal",
     "image": "gds-ont-flasher.jpg",
+    "cardImage": "gds-ont-flasher-3.jpg",
     "heroImage": "gds-ont-flasher-3.jpg",
     "images": ["gds-ont-flasher-3.jpg", "gds-ont-flasher-2.jpg", "gds-ont-flasher-4.jpg"],
     "imageInfo": {
