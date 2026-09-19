@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="tl" data-root="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GDS Digital Solutions — BayadTrack at Website Development</title>
+<meta name="description" content="BayadTrack: Google Sheets na pang-koleksyon para sa internet reseller, kayang-kaya sa cellphone. Gumagawa rin kami ng website para sa maliliit na negosyo. Malinaw ang presyo at proseso ng bayad.">
+<link rel="canonical" href="./">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GDS Digital Solutions">
+<meta property="og:title" content="GDS Digital Solutions — BayadTrack at Website Development">
+<meta property="og:description" content="Alam mo agad kung sino ang bayad at sino ang dapat singilin. BayadTrack — Google Sheets na pang-koleksyon na kayang-kaya sa cellphone.">
+<meta property="og:image" content="https://gdsdigitalsolutions.github.io/gds-site/assets/brand/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="tl_PH">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/brand/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<meta name="theme-color" content="#00102c">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/home.css">
+</head>
+<body class="home">
+<a class="skip-link" href="#main">Lumaktaw sa nilalaman</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="./">
+      <img src="assets/brand/logo-96.png" alt="" width="96" height="96">
+      <span>
+        <span class="brand__name">GDS Digital Solutions</span>
+        <span class="brand__tag">Digital Products</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Buksan ang menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Pangunahing menu">
+      <a href="products/">Mga Product</a>
+      <a href="#paano-umorder">Paano Umorder</a>
+      <a href="track/">Track Order</a>
+      <a href="about/">Tungkol Sa Amin</a>
+      <a href="contact/">Contact</a>
+      <a class="btn btn--accent btn--sm" href="products/bayadtrack/">Tingnan ang BayadTrack</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO (3D scene) ============ -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__aurora">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__orb hero__orb--3"></div>
+        <div class="hero__orb hero__orb--4"></div>
+      </div>
+      <div class="hero__veil"></div>
+      <div class="hero__dots"></div>
+    </div>
+
+    <div class="wrap">
+      <div class="hero__time">
+        <div class="livetime" data-livetime hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span class="livetime__label" data-livetime-label>Live Time</span>
+          <span class="livetime__date" data-livetime-date></span>
+          <time class="livetime__clock" data-livetime-clock></time>
+        </div>
+      </div>
+
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <span class="eyebrow">BayadTrack &middot; Business Systems &middot; Websites</span>
+          <h1>Sino pa ang may utang?<br><span class="grad">Alam mo agad.</span></h1>
+          <p class="hero__sub">
+            <strong>BayadTrack</strong> ang payment tracker para sa internet reseller at kahit sinong
+            may buwanang listahan ng sinisingil. Google Sheets lang, gumagana sa phone, real-time —
+            tina-type ng collector ang bayad habang nasa field, at sa loob ng ilang segundo kita mo na
+            sa dashboard mo. Walang tawagan, walang "i-send ko mamaya."
+          </p>
+          <div class="btn-row hero__cta">
+            <a class="btn btn--accent btn--lg" href="products/bayadtrack/">
+              Tingnan ang BayadTrack
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--onband btn--lg" href="#paano-umorder">Paano umorder</a>
+          </div>
+          <div class="hero__chips">
+            <span class="chip chip--onband">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+              Kayang-kaya sa cellphone
+            </span>
+            <span class="chip chip--onband">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              Walang binubura kada buwan
+            </span>
+            <span class="chip chip--onband">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+              GCash at bank transfer
+            </span>
+          </div>
+          <div class="hero__facts">
+            <div class="hero__fact"><b>₱2,499</b><span>One-time, walang monthly</span></div>
+            <div class="hero__fact"><b>1 araw</b><span>Setup sa Google Drive mo</span></div>
+            <div class="hero__fact"><b>1,000</b><span>Kliyente ang kapasidad</span></div>
+            <div class="hero__fact"><b>30 days</b><span>Support pagkatapos ng setup</span></div>
+          </div>
+        </div>
+
+        <div class="scene" data-tilt aria-hidden="true">
+          <div class="scene__stage">
+            <div class="scene__shadow"></div>
+            <div class="device">
+              <div class="device__bar">
+                <span class="device__dots"><i></i><i></i><i></i></span>
+                <span class="device__url"><em>BayadTrack</em> &middot; Dashboard &middot; Google Sheets</span>
+                <span class="device__pill">Sample data</span>
+              </div>
+              <img src="assets/products/bayadtrack-dashboard.jpg" alt="" width="1493" height="1010" fetchpriority="high">
+            </div>
+
+            <div class="float float--a float--ok">
+              <span class="float__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              </span>
+              <span>
+                <span class="float__label">Nakolekta ngayong buwan</span>
+                <span class="float__value">₱46,400</span>
+              </span>
+            </div>
+            <div class="float float--b float--warn">
+              <span class="float__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg>
+              </span>
+              <span>
+                <span class="float__label">Overdue na kliyente</span>
+                <span class="float__value">31 &middot; ₱109,550</span>
+              </span>
+            </div>
+            <div class="float float--c">
+              <span class="float__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+              </span>
+              <span>
+                <span class="float__label">Need follow-up</span>
+                <span class="float__value">24 na kliyente</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST ============ -->
+  <section class="trust">
+    <div class="wrap">
+      <div class="trust__grid">
+        <div class="c3 trust-card" data-reveal>
+          <span class="trust-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          </span>
+          <strong>Isang official account lang</strong>
+          <span>Gamitin lang ang payment details na lalabas pagkatapos mong mag-order.</span>
+        </div>
+        <div class="c3 trust-card" data-reveal style="--d:.08s">
+          <span class="trust-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h5"/></svg>
+          </span>
+          <strong>Transparent ang presyo</strong>
+          <span>Nasa product page ang presyo at ang kasama — walang "PM for price."</span>
+        </div>
+        <div class="c3 trust-card" data-reveal style="--d:.16s">
+          <span class="trust-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16v12H5.5L4 18z"/><path d="M8 9h8M8 12h5"/></svg>
+          </span>
+          <strong>May order reference</strong>
+          <span>Bawat order ay may sariling reference na pwede mong i-track anumang oras.</span>
+        </div>
+        <div class="c3 trust-card" data-reveal style="--d:.24s">
+          <span class="trust-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+          </span>
+          <strong>Kasama ang setup</strong>
+          <span>Hindi lang file ang bibilhin mo — kami ang magse-setup at magtuturo sa iyo.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BAYADTRACK ============ -->
+  <section class="section" id="bayadtrack">
+    <div class="wrap">
+      <div class="section-head section-head--wide" data-reveal>
+        <span class="eyebrow">Ang pangunahing produkto</span>
+        <div class="logo-swap">
+          <img src="assets/products/bayadtrack-logo.png" alt="BayadTrack" class="section-logo only-light">
+          <img src="assets/products/bayadtrack-logo-white.png" alt="BayadTrack" class="section-logo only-dark">
+        </div>
+        <h2 class="visually-hidden">BayadTrack</h2>
+        <p>
+          Kung nangongolekta ka ng buwanang bayad, alam mo ang problema: nasa notebook ang isang
+          listahan, nasa chat ang isa, at sa dulo ng buwan hindi mo na sigurado kung sino ang bayad na.
+          Ito mismo ang inaayos ng BayadTrack.
+        </p>
+      </div>
+
+      <div class="bt__grid">
+        <div>
+          <figure class="showcase" data-reveal>
+            <div class="showcase__frame">
+              <div class="device__bar">
+                <span class="device__dots"><i></i><i></i><i></i></span>
+                <span class="device__url"><em>BayadTrack</em> &middot; Dashboard</span>
+                <span class="device__pill">Demo &middot; fictional data</span>
+              </div>
+              <img src="assets/products/bayadtrack-dashboard.jpg" alt="BayadTrack dashboard (demo · fictional data)" width="1493" height="1010" loading="lazy">
+            </div>
+            <figcaption>Ang dashboard ng BayadTrack — kusang nag-a-update mula sa tracker at collection sheet.</figcaption>
+          </figure>
+
+          <div class="bento">
+            <div class="c3 bento__card" data-reveal>
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                Nakikita mo sa isang tingin
+              </h3>
+              <ul class="check-list">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>Kabuuang nakolekta ngayong buwan at ang natitirang balanse</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>Breakdown kada area — alin ang malakas at alin ang mahina</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>Naka-ayos na listahan ng dapat mong puntahan bukas</span>
+                </li>
+              </ul>
+            </div>
+            <div class="c3 bento__card" data-reveal style="--d:.1s">
+              <h3>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+                Hindi nawawala ang datos
+              </h3>
+              <ul class="check-list">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>Lumipat lang ng buwan — walang binubura, walang "start new month"</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>Ang na-disconnect ay naka-record pa rin — dala niya ang utang kapag bumalik</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>May dating utang ang kliyente? Ilagay lang kung ilang buwan at kasama na ito sa singil</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <aside class="bt__aside" data-reveal style="--d:.12s">
+          <div class="c3 c3--static price-card">
+            <span class="tag tag--green" style="margin-bottom:var(--s-4)">Available na</span>
+            <div class="price" style="margin-bottom:var(--s-1)">₱2,499</div>
+            <p class="small muted" style="margin-bottom:var(--s-4)">One-time payment. Walang monthly. Sa iyo ang file.</p>
+            <p class="small" style="margin-bottom:var(--s-5)">
+              Kung 3 kliyente lang ang hindi mo nasingil sa ₱1,000 plan, <strong>₱3,000+ ang
+              nawawala sa iyo kada buwan</strong>. Sa unang buwan pa lang, bayad na ang BayadTrack.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn--accent btn--block" href="products/bayadtrack/">Buong detalye</a>
+              <a class="btn btn--outline btn--block" href="#" data-gds-href="contact.messenger" data-gds-require="contact.messenger" rel="noopener">Magtanong muna</a>
+            </div>
+            <hr style="border:0;border-top:1px solid var(--border);margin:var(--s-5) 0">
+            <div class="price-card__facts">
+              <div><span class="muted">Platform</span><strong>Google Sheets</strong></div>
+              <div><span class="muted">Setup</span><strong>Sa loob ng 1 araw</strong></div>
+              <div><span class="muted">Kapasidad</span><strong>1,000 kliyente</strong></div>
+              <div><span class="muted">Suporta</span><strong>30 days support after setup, including a first-month check-in</strong></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATALOG ============ -->
+  <section class="section section--alt" id="products">
+    <div class="wrap">
+      <div class="section-head section-head--center" data-reveal>
+        <span class="eyebrow">Mga Product</span>
+        <h2>Tapos na at handa nang gamitin</h2>
+        <p>
+          Products and services na tested, ready, at kaya naming suportahan.
+          May iba pang binubuo, pero hindi namin ibebenta ang wala pa.
+        </p>
+      </div>
+
+      <div class="grid grid-3" data-gds-grid="all" data-reveal style="--d:.1s"></div>
+    </div>
+  </section>
+
+  <!-- ============ PAANO UMORDER ============ -->
+  <section class="section section--band" id="paano-umorder">
+    <div class="wrap">
+      <div class="section-head section-head--center" data-reveal>
+        <span class="eyebrow">Ang Proseso</span>
+        <h2>Apat na hakbang, walang paikot-ikot</h2>
+        <p>Ganito ang proseso mula sa pagpili hanggang sa delivery. Nakikita mo ang lahat ng detalye bago ka magbayad.</p>
+      </div>
+
+      <div class="steps-3d">
+        <div class="step-3d" data-reveal>
+          <span class="step-3d__num" aria-hidden="true"></span>
+          <h3>Piliin ang product</h3>
+          <p>Buksan ang product page. Nandoon ang presyo, ang kasama, at ang kailangan mo bago magsimula — walang tinatago.</p>
+        </div>
+        <div class="step-3d" data-reveal style="--d:.1s">
+          <span class="step-3d__num" aria-hidden="true"></span>
+          <h3>Punan ang order form</h3>
+          <p>Pangalan, contact, at paraan ng bayad. Pagka-submit, makukuha mo agad ang <strong>order reference</strong> mo — halimbawa <span class="mono">GDS-2608-0042</span>.</p>
+        </div>
+        <div class="step-3d" data-reveal style="--d:.2s">
+          <span class="step-3d__num" aria-hidden="true"></span>
+          <h3>Magbayad at ilagay ang reference</h3>
+          <p>Ipapakita ang exact amount at ang official GCash o bank details. Ilagay ang reference sa notes ng bayad para agad namin itong makita.</p>
+        </div>
+        <div class="step-3d" data-reveal style="--d:.3s">
+          <span class="step-3d__num" aria-hidden="true"></span>
+          <h3>I-upload ang proof of payment</h3>
+          <p>I-upload ang screenshot ng resibo. Ive-verify namin ang bayad, tapos itatakda natin ang setup o delivery — <span data-gds-text="order.deliveryPromise">karaniwang ilang oras lang</span>.</p>
+        </div>
+      </div>
+
+      <div class="btn-row" style="margin-top:var(--s-7);justify-content:center" data-reveal>
+        <a class="btn btn--accent" href="products/">Simulan ang order</a>
+        <a class="btn btn--onband" href="track/">May order na ako — i-track</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAYMENT ============ -->
+  <section class="section section--alt" id="bayad">
+    <div class="wrap">
+      <div class="section-head section-head--wide" data-reveal>
+        <span class="eyebrow">Paraan ng Bayad</span>
+        <h2>Makikita mo ang payment details pagkatapos mong i-submit ang order.</h2>
+        <p>Pagka-submit ng order, lalabas ang exact amount, official payment details, at QR code bago ka mag-upload ng proof of payment.</p>
+      </div>
+
+      <div class="pay-note">
+        <div class="notice notice--warn" data-reveal>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l9 16H3z"/><path d="M12 9v5M12 17h.01"/></svg>
+          <div>
+            <strong>Para sa seguridad mo, gamitin lang ang payment details na ipinapakita pagkatapos mong mag-order sa official GDS order process.</strong>
+            Huwag magpadala ng bayad sa account na galing sa unofficial na message, comment, o ibang source.
+          </div>
+        </div>
+        <div class="c3 c3--static pay-note__lock" data-reveal style="--d:.1s">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.5"/></svg>
+          <div>
+            <strong>Hindi kami humihingi ng password, OTP, o card details</strong>
+            <span>Screenshot lang ng resibo ang tinatanggap bilang proof of payment.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BAKIT GDS ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="pd-grid">
+        <div class="prose" data-reveal>
+          <span class="eyebrow">Bakit dito bumili</span>
+          <h2>Maliit kaming operasyon — at hindi namin ito itinatago</h2>
+          <p>
+            Hindi kami malaking kompanya na may support team. Ang sumasagot sa iyo ay ang mismong
+            gumawa ng BayadTrack. May maganda at may limitasyon — sinasabi namin pareho.
+          </p>
+          <ul class="check-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Inaalok lang namin ang mga produktong tapos, tested, at kaya naming suportahan.</strong> Hindi namin ibebenta sa iyo ang wala pa.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Kasama ang setup.</strong> Hindi ka bibigyan ng file at iiwan — kami ang magse-setup sa Google Drive mo at magtuturo kung paano ito gamitin.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>May support ka pagkatapos magbayad.</strong> 30 days support after setup, including a first-month check-in — iyan ang parte na madalas nawawala sa iba.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Sasabihin namin nang tapat kung hindi bagay.</strong> Kung hindi tugma ang BayadTrack sa paraan ng pangongolekta mo, sasabihin namin — mas mabuti pang walang benta kaysa may binili kang hindi mo magagamit.</span>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="c3 c3--static c3--pad" data-reveal style="--d:.12s">
+          <h3 style="margin-bottom:var(--s-4)">Bago ka umorder</h3>
+          <p class="small muted" style="margin-bottom:var(--s-4)">
+            Sabihin mo kung ilan ang kliyente mo at paano ka nangongolekta ngayon.
+            Sasabihin namin nang tapat kung makakatulong ito sa iyo o hindi.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn--primary btn--block" href="contact/">Magtanong muna</a>
+          </div>
+          <hr style="border:0;border-top:1px solid var(--border);margin:var(--s-5) 0">
+          <div class="price-card__facts small">
+            <div>
+              <span class="muted">Oras ng pagsagot</span>
+              <strong data-gds-text="contact.hours" data-gds-fallback="Message lang kami">Message lang kami</strong>
+            </div>
+            <div>
+              <span class="muted">Karaniwang sagot</span>
+              <strong data-gds-text="contact.responseTime" data-gds-fallback="Sa lalong madaling panahon">Sa lalong madaling panahon</strong>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section section--alt">
+    <div class="wrap wrap-narrow">
+      <div class="section-head section-head--center" data-reveal>
+        <span class="eyebrow">Mga Tanong</span>
+        <h2>Madalas itanong</h2>
+      </div>
+
+      <div class="faq" data-reveal style="--d:.1s">
+        <details>
+          <summary>Ligtas bang magbayad dito?</summary>
+          <div class="faq__answer">
+            <p>Hindi kami humihingi ng password, OTP, o card details — kailanman. Pagkatapos mong i-submit ang order, makikita mo ang official GCash o bank payment details, exact amount, at QR code. Gamitin lang ang payment details na nasa official GDS order page mo. Ang site ay tumatanggap lang ng screenshot ng resibo bilang proof of payment.</p>
+            <p>Kung may nag-message sa iyo na humihingi ng OTP o nagbigay ng ibang account number, hindi iyon kami.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Para kanino ba talaga ang BayadTrack?</summary>
+          <div class="faq__answer">
+            <p>Para sa mga may listahan ng buwanang sinisingil: internet reseller at kapitbahay-net, coop, may-ari ng apartment o boarding house, at kahit anong negosyong may recurring na koleksyon.</p>
+            <p>Hindi ito para sa point-of-sale o sa isahang benta — walang recurring na balanse doon, kaya hindi mo ito magagamit nang husto.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Gaano katagal bago ko matanggap ang binili ko?</summary>
+          <div class="faq__answer">
+            <p><span data-gds-text="order.deliveryPromise">Karaniwang ilang oras lang</span>. Manu-mano naming ini-verify ang bawat bayad bago i-setup ang file sa Google Drive mo — sigurado, pero hindi instant.</p>
+            <p>Kapag lampas na sa sinabi naming oras, i-message mo lang ang reference number mo at aasikasuhin namin agad.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Paano kung nabayaran ko na pero wala pa rin?</summary>
+          <div class="faq__answer">
+            <p>Pumunta sa <a href="track/">Track Order</a> at ilagay ang reference mo para makita ang status. Kung matagal nang pending, i-message mo kami kasama ang reference at screenshot ng bayad — inaayos namin ito sa parehong araw.</p>
+          </div>
+        </details>
+        <details>
+          <summary>May refund ba?</summary>
+          <div class="faq__answer">
+            <p>Hangga't hindi pa namin nasisimulan ang setup mo, buong refund — walang tanong. Pagkatapos maibigay at mai-setup ang file, hindi na ito maibabalik; pero kung mali o sira ang natanggap mo, papalitan namin ito o ibabalik ang bayad. Nakadetalye ito sa <a href="refund/">Refund Policy</a>.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Pwede bang cash on delivery o installment?</summary>
+          <div class="faq__answer">
+            <p>Walang COD dahil digital ang produkto — walang pisikal na ipapadala. Para sa website development, hati ang bayad: 50% bago magsimula at 50% pagkatapos i-launch.</p>
+          </div>
+        </details>
+        <details>
+          <summary>May iba pa ba kayong produkto?</summary>
+          <div class="faq__answer">
+            <p>May mga binubuo pa kami, pero hindi namin ibebenta ang hindi pa tapos at tested. Kapag may bagong handa na, unang malalaman ito sa aming Facebook Page.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band" data-reveal>
+        <h2>Handa nang subukan ang BayadTrack?</h2>
+        <p>Tingnan muna ang buong detalye at presyo. May tanong? Message lang — mas mabuting sigurado bago bumili.</p>
+        <div class="btn-row">
+          <a class="btn btn--accent btn--lg" href="products/bayadtrack/">Tingnan ang BayadTrack</a>
+          <a class="btn btn--onband btn--lg" href="contact/">Magtanong muna</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="./" style="margin-bottom:var(--s-4)">
+          <img src="assets/brand/logo-96.png" alt="" width="96" height="96">
+          <span>
+            <span class="brand__name">GDS Digital Solutions</span>
+            <span class="brand__tag">Digital Products</span>
+          </span>
+        </a>
+        <p style="font-size:.9375rem;max-width:34ch">
+          Mga digital na tool para sa maliliit na negosyo sa Pilipinas — nagsisimula sa BayadTrack.
+        </p>
+      </div>
+
+      <div>
+        <h4>Mga Product</h4>
+        <ul>
+          <li><a href="products/bayadtrack/">BayadTrack</a></li>
+          <li><a href="products/gds-ont-flasher/">GDS ONT Flasher</a></li>
+          <li><a href="products/website-development/">Website Development</a></li>
+          <li><a href="products/">Lahat ng product</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Tulong</h4>
+        <ul>
+          <li><a href="#paano-umorder">Paano umorder</a></li>
+          <li><a href="track/">Track order</a></li>
+          <li><a href="#bayad">Paraan ng bayad</a></li>
+          <li><a href="contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Makipag-ugnayan</h4>
+        <ul>
+          <li data-gds-require="contact.facebookPage">
+            <a href="#" data-gds-href="contact.facebookPage" rel="noopener">Facebook Page</a>
+          </li>
+          <li data-gds-require="contact.messenger">
+            <a href="#" data-gds-href="contact.messenger" rel="noopener">Messenger</a>
+          </li>
+          <li data-gds-require="contact.email">
+            <a href="#" data-gds-href="contact.email"><span data-gds-text="contact.email">Email</span></a>
+          </li>
+          <li data-gds-require="contact.mobile">
+            <a href="#" data-gds-href="contact.mobile"><span data-gds-text="contact.mobile">Mobile</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> GDS Digital Solutions. Lahat ng karapatan ay nakalaan.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="terms/">Terms of Service</a>
+        <a href="privacy/">Privacy Policy</a>
+        <a href="refund/">Refund Policy</a>
+        <a href="about/">Tungkol sa amin</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/products.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

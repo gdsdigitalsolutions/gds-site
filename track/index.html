@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tl" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Track Order — GDS Digital Solutions</title>
+<meta name="description" content="Ilagay ang order reference mo para makita ang status ng order — pending, natanggap ang bayad, verified, o naipadala na.">
+<link rel="canonical" href="./">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GDS Digital Solutions">
+<meta property="og:title" content="Track Order — GDS Digital Solutions">
+<meta property="og:description" content="Ilagay ang order reference mo para makita ang status ng order mo.">
+<meta property="og:image" content="https://gdsdigitalsolutions.github.io/gds-site/assets/brand/og-default.jpg">
+<meta property="og:locale" content="tl_PH">
+
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/brand/favicon-16.png">
+<link rel="apple-touch-icon" href="../assets/brand/apple-touch-icon.png">
+<meta name="theme-color" content="#00102c">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Lumaktaw sa nilalaman</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="../">
+      <img src="../assets/brand/logo-96.png" alt="" width="96" height="96">
+      <span>
+        <span class="brand__name">GDS Digital Solutions</span>
+        <span class="brand__tag">Digital Products</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Buksan ang menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Pangunahing menu">
+      <a href="../products/">Mga Product</a>
+      <a href="../#paano-umorder">Paano Umorder</a>
+      <a href="./" aria-current="page">Track Order</a>
+      <a href="../about/">Tungkol Sa Amin</a>
+      <a href="../contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li aria-current="page">Track Order</li>
+      </ol>
+    </nav>
+  </div>
+
+  <section class="section--tight">
+    <div class="wrap wrap-narrow">
+      <div class="section-head">
+        <span class="eyebrow">Status</span>
+        <h1>I-track ang order mo</h1>
+        <p>Ilagay ang order reference na nakuha mo pagkatapos mag-order. Ganito ang hitsura nito: <span class="mono">GDS-2608-0042</span>.</p>
+      </div>
+
+      <form id="track-form" class="form-grid" novalidate style="margin-bottom:var(--s-6)">
+        <div class="field">
+          <label for="f-ref">Order reference</label>
+          <input type="text" id="f-ref" name="ref" placeholder="GDS-2608-0042" autocomplete="off" spellcheck="false" style="font-family:var(--font-mono);text-transform:uppercase">
+          <span class="field__error" data-error-for="ref">Ilagay ang reference mo.</span>
+        </div>
+        <button type="submit" class="btn btn--accent btn--lg" id="track-btn">Tingnan ang status</button>
+      </form>
+
+      <div id="track-error" class="notice notice--error" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <div><strong>Hindi mahanap</strong><span id="track-error-msg"></span></div>
+      </div>
+
+      <div id="track-result" hidden>
+        <div class="card card--pad-lg">
+          <div style="display:flex;flex-wrap:wrap;gap:var(--s-3);justify-content:space-between;align-items:center;margin-bottom:var(--s-6)">
+            <div>
+              <div class="tiny muted" style="text-transform:uppercase;letter-spacing:.08em;font-weight:600">Reference</div>
+              <div class="mono" style="font-size:1.125rem;font-weight:700" id="res-ref"></div>
+            </div>
+            <span class="tag" id="res-badge">—</span>
+          </div>
+
+          <ul class="ladder" id="res-ladder"></ul>
+
+          <div class="small muted" id="res-updated" style="margin-top:var(--s-3)"></div>
+        </div>
+
+        <div class="notice notice--info" style="margin-top:var(--s-5)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
+          <div>
+            <strong>May tanong sa order na ito?</strong>
+            I-message mo kami kasama ang reference mo at sasagutin ka namin.
+            <span data-gds-require="contact.messenger"><a href="#" data-gds-href="contact.messenger" rel="noopener">Buksan ang Messenger</a>.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq" style="margin-top:var(--s-8)">
+        <details>
+          <summary>Nawala ko ang reference number ko</summary>
+          <div class="faq__answer">
+            <p>Ipinakita ang reference sa screen pagka-submit ng order, at nasa confirmation email mo rin ito. Kung hindi mo ito na-save, i-message mo kami kasama ang pangalan, email, at petsa ng order mo — hahanapin namin.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Ilang araw bago mag-verify?</summary>
+          <div class="faq__answer">
+            <p>Karaniwan ay <span data-gds-text="order.deliveryPromise">ilang oras lang</span> sa loob ng oras ng operasyon namin. Kung lampas na ng isang araw at pending pa rin ang order mo, i-message mo kami agad.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Bakit walang detalye ng order dito?</summary>
+          <div class="faq__answer">
+            <p>Sinadya namin ito. Status lang ang ipinapakita ng page na ito — walang pangalan, email, o numero — para kahit may makakita ng reference mo, walang personal na impormasyon ang malalaman nila.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="margin-top:0;border-top:0">
+      <span>&copy; <span data-year>2026</span> GDS Digital Solutions</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="../terms/">Terms of Service</a>
+        <a href="../privacy/">Privacy Policy</a>
+        <a href="../refund/">Refund Policy</a>
+        <a href="../contact/">Contact</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/config.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/track.js"></script>
+</body>
+</html>

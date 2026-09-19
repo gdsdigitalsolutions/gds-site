@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /order/
+
+Sitemap: https://gdsdigitalsolutions.github.io/gds-site/sitemap.xml
